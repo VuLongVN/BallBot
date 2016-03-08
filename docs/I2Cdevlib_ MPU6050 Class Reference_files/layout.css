@@ -1,0 +1,948 @@
+/* layout.css
+ *
+ * Special styles for your specific site tags (by ID or class)
+ *
+ * guidelines:
+ * - NO HTML TAGS!  Class styles or ID styles only.  HTML tag styles go in "html.css"
+ * - NO FONTS!  Font faces, sizes, line spacing, etc. go in "fonts.css"
+ */
+ 
+/* ====================================================
+ * MAIN PAGE STRUCTURE
+ * ==================================================== */
+
+#pageWrapper {
+}
+
+#pageHeader {
+    margin: 1.5em 0;
+}
+
+#pageMenu {
+    background-color: #000;
+    border: solid #222;
+    border-width: 1px 0;
+    box-shadow: 0 0.5em 1em #888;
+    height: 42px;
+    margin: 1em 0 2em;
+    position: relative;
+    z-index: 1;
+}
+
+#pageBody {
+    min-height: 400px;
+}
+
+#pageFooter {
+    background-color: #EEE;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #CCC;
+    box-shadow: 0 0.5em 1em #888;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: right;
+    margin-top: 4em;
+}
+
+#pageFooter > div {
+    padding: 1em;
+}
+
+#logo {
+}
+
+#slogan {
+    bottom: 0;
+    float: right;
+    position: absolute;
+    right: 0;
+}
+
+div.wrap960 {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+
+/* ====================================================
+ * FRONT/HOME PAGE
+ * ==================================================== */
+div.platforms-home {
+    float: right;
+    margin-left: 24px;
+    width: 235px;
+}
+div.platforms-home h2 {
+    background-color: #DDD;
+    border: 1px solid;
+    border-color: #EEE #BBB #999 #DDD;
+    border-top: 1px solid #EEE;
+    margin: 0 0 8px;
+    padding: 4px 0;
+    text-align: center;
+    text-shadow: 0 1px 1px #FFF;
+}
+div.platforms-home table {
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    width: 100%;
+}
+div.platforms-home table td {
+    border: 0;
+    padding: 8px 0;
+    text-align: center;
+}
+div.description-home h2 {
+    border-bottom: 1px solid #CCC;
+    clear: left;
+    padding-top: 16px;
+    padding-bottom: 4px;
+}
+div.description-home a img {
+    border: 1px solid #CCC;
+    box-shadow: 0.5em 0.5em 1em #CCC;
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+table.chipin {
+    border-collapse: collapse;
+    margin: 12px auto 24px;
+    width: 800px;
+}
+table.chipin td {
+    border: solid #CCC;
+    border-width: 1px 0;
+    padding: 32px 0;
+    text-align: center;
+    width: 33%;
+    vertical-align: middle;
+}
+
+/* ====================================================
+ * DEVICE LIST TABLE
+ * ==================================================== */
+table.devices {
+    box-shadow: 0.25em 0.25em 1em #AAA;
+    margin-bottom: 2.5em;
+    width: 100%;
+}
+table.devices thead th {
+    background-color: #CCC;
+    border: 1px solid #AAA;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-align: left;
+}
+table.devices tbody th {
+}
+table.devices tbody td {
+    border: 1px solid #CCC;
+    padding: 6px 10px;
+}
+table.devices tbody tr:nth-child(even) {
+    background-color: #EEE;
+}
+
+/* ====================================================
+ * DEVICE DETAIL TABS
+ * ==================================================== */
+ul.tabs {
+    height: 29px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul.tabs li {
+    float: left;
+    margin: 0 0.5em 0 0;
+    height: 29px;
+}
+ul.tabs li a {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 8px 8px 0 0;
+    display: block;
+    font-weight: bold;
+    padding: 4px 10px;
+    position: relative;
+    text-decoration: none;
+    z-index: 5;
+}
+ul.tabs li a.active {
+    background-color: #FFF;
+    border-bottom-color: #FFF;
+}
+ul.tabs li a:hover {
+    background-color: #EEF;
+}
+ul.tabs li a span.icon {
+    display: block;
+    float: left;
+    height: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    width: 16px;
+}
+ul.tabs li a span.icon.source { background-image: url(../images/icons/16/file_extension_rtf.png); }
+ul.tabs li a span.icon.registers { background-image: url(../images/icons/16/processor.png); }
+ul.tabs li a span.icon.captures { background-image: url(../images/icons/16/monitor.png); }
+ul.tabs li a span.icon.links { background-image: url(../images/icons/16/link.png); }
+ul.tabs li a span.icon.help { background-image: url(../images/icons/16/question.png); }
+div.tabContainer {
+    border: solid #CCC;
+    border-width: 1px;
+    display: none;
+    min-height: 300px;
+    padding: 1em;
+    overflow: hidden;
+    width: 100%;
+}
+div.tabContainer.active {
+    display: block;
+}
+ul.faq .question {
+    background-color: #F4F4F4;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 0.8em 1em;
+}
+ul.faq .question:hover {
+    background-color: #FDD;
+    border-color: #A55;
+    cursor: pointer;
+}
+ul.faq .answer {
+    display: none;
+    margin-bottom: 2em;
+    padding: 2px 4px;
+}
+ul.faq li.active .answer {
+    display: block;
+}
+ul.faq .author {
+    color: #555;
+    float: right;
+    font-size: 0.85em;
+    font-style: italic;
+    font-weight: normal;
+    margin: 3px 3px 0 16px;
+}
+
+/* ====================================================
+ * REGISTER MAP TABLE
+ * ==================================================== */
+table.registers {
+    border: 1px solid #AAA;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+table.registers th, table.registers td {
+    font-family: Consolas, Courier New, monospace;
+    font-size: 10pt;
+}
+table.registers th {
+    background-color: #666;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#555), color-stop(0.5, #777));
+    border: 1px solid #333;
+    color: #FFF;
+    padding: 4px 6px;
+    position: relative;
+    text-align: left;
+    text-shadow: 1px 1px #000;
+}
+table.registers thead th {
+    text-align: center;
+}
+table.registers thead th:nth-child(1) {
+    background-color: #DDD;
+}
+table.registers tbody tr:hover th {
+    background-color: #AA8;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#553), color-stop(0.5, #AA8));
+}
+table.registers td {
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EEE), color-stop(0.2, #FFF));
+    border: 1px solid #DDD;
+    padding: 4px 6px;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px #EEE;
+}
+table.registers tr.rw0 td.rw {
+    background: rgba(0, 0, 255, 0.1);
+}
+table.registers tr.rw1 td.rw {
+    background: rgba(0, 255, 0, 0.1);
+}
+table.registers tr.rw2 td.rw {
+    background: rgba(255, 0, 0, 0.1);
+}
+table.registers td:hover {
+    background-color: #FF8;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EE6), color-stop(0.2, #FF8));
+    pointer: default;
+    text-shadow: 1px 1px #EE6;
+}
+table.registers td.missing {
+    background-color: #FFF;
+    background-image: url(../images/crosshatch.png);
+}
+table.registers th.corner {
+    background: transparent !important;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+}
+table.registers div.tip {
+    display: none;
+}
+table.registers span.tipvis {
+    background-image: url(../images/tipvis-red.png);
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+}
+table.registers th span.tipvis {
+    background-image: url(../images/tipvis-yellow.png);
+}
+
+/* ====================================================
+ * REGISTER DEFINITION/EDITING TABLE
+ * ==================================================== */
+table.register-definitions {
+    border: 1px solid #AAA;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    width: 100%;
+}
+table.register-definitions > tbody > tr {
+    border-bottom: 3px solid #000;
+}
+
+table.register-definitions > tbody > tr.dumptemplate { display: none; }
+table.register-definitions > tbody > tr.regtemplate { display: none; }
+table.register-definitions > tbody > tr.fieldtemplate { display: none; }
+
+table.register-definitions th, table.register-definitions td {
+    font-family: Consolas, Courier New, monospace;
+    font-size: 10pt;
+}
+table.register-definitions > tbody > tr > th {
+    background-color: #AAA;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#EEE), color-stop(1, #FFF));
+    border: 1px solid #333;
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 4px 6px;
+    text-align: center;
+    text-shadow: 0 1px #FFF;
+    vertical-align: middle;
+   width: 40px;
+}
+table.register-definitions > tbody > tr > td {
+    padding: 4px 6px;
+}
+table.register-definitions > thead > tr > th {
+    background-color: #666;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#555), color-stop(0.5, #777));
+    border: 1px solid #333;
+    color: #FFF;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 1px 1px #000;
+}
+table.register-definitions > thead > tr > th {
+    text-align: center;
+}
+table.register-definitions > tbody > tr:hover > th {
+    background-color: #AA8;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#FFC), color-stop(1, #FFF));
+}
+table.register-definitions > tbody > tr > td {
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EEE), color-stop(0.2, #FFF));
+    border: 1px solid #DDD;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 1px 1px #EEE;
+}
+table.register-definitions > tbody > tr > td:hover {
+    background-color: #FF8;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EE6), color-stop(0.2, #FF8));
+    pointer: default;
+    text-shadow: 1px 1px #EE6;
+}
+table.register-definitions > tbody > tr > td.missing {
+    background-color: #FFF;
+    background-image: url(../images/crosshatch.png);
+}
+table.register-definitions th.corner {
+    background: transparent !important;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+}
+table.register-definitions input, table.register-definitions textarea, table.register-definitions select {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    display: block;
+}
+table.register-definitions textarea {
+    /*height: 48px;*/
+    width: 80%;
+}
+table.register-definitions > tbody > tr > td input {
+}
+table.register-definitions td.addrow input {
+    display: inline;
+}
+table.register-definitions input:focus, table.register-definitions textarea:focus {
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#6E6), color-stop(0.2, #CFC));
+}
+table.register-definitions > tfoot > tr > td.addrow {
+    background: url(../images/icons/32/add.png) center center no-repeat #FFF;
+    height: 32px;
+    opacity: 0.5;
+    padding: 4px 6px;
+    vertical-align: center;
+}
+table.register-definitions > tfoot > tr > td.addrow:hover {
+    background: url(../images/icons/32/add.png) center center no-repeat #CDF;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-definitions > tbody > tr > td.deleterow {
+    background: url(../images/icons/32/delete.png) center center no-repeat #FFF;
+    opacity: 0.5;
+    width: 32px;
+}
+table.register-definitions > tbody > tr > td.deleterow:hover {
+    background: url(../images/icons/32/delete.png) center center no-repeat #FEE;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-definitions label {
+    background-color: rgba(0, 0, 0, 0.05);
+    clear: both;
+    color: #333;
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin: 0 2px 2px 0;
+    padding: 1px 2px;
+    text-shadow: none;
+    width: 130px;
+}
+
+/* ====================================================
+ * REGISTER FIELDS DEFINITION/EDITING TABLE
+ * ==================================================== */
+table.register-fields {
+    /*border: 1px solid #AAA;*/
+    border-collapse: collapse;
+    margin-top: 16px;
+    width: 100%;
+}
+table.register-fields th, table.register-fields td {
+    font-family: Consolas, Courier New, monospace;
+    font-size: 10pt;
+}
+table.register-fields > tbody > tr.template { display: none; }
+table.register-fields > tbody > tr > th {
+    background-color: #AAA;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#EEE), color-stop(1, #FFF));
+    border: 1px solid #CCC;
+    font-weight: bold;
+    padding: 4px 6px;
+    text-align: right;
+    text-shadow: 0 1px #FFF;
+    vertical-align: middle;
+    width: 40px;
+}
+table.register-fields > thead > tr > th {
+    background-color: #666;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#999), color-stop(0.5, #EEE));
+    border: 1px solid #CCC;
+    color: #000;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 0px 1px #FFF;
+}
+table.register-fields thead th {
+    text-align: center;
+}
+table.register-fields > tbody > tr:hover > th {
+    background-color: #AA8;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#CDF), color-stop(1, #FFF));
+}
+table.register-fields td {
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EEE), color-stop(0.2, #FFF));
+    border: 1px solid #DDD;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 1px 1px #EEE;
+}
+table.register-fields td:hover {
+    background-color: #FF8;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#BCF), color-stop(0.2, #EEF));
+    pointer: default;
+    text-shadow: 1px 1px #EE6;
+}
+table.register-fields td.missing {
+    background-color: #FFF;
+    /*background-image: url(../images/crosshatch.png);*/
+}
+table.register-fields th.corner {
+    background: transparent !important;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+}
+table.register-fields > tfoot > tr > td.addrow {
+    background: url(../images/icons/16/add.png) center center no-repeat #FFF;
+    height: 16px;
+    opacity: 0.5;
+}
+table.register-fields > tfoot > tr > td.addrow:hover {
+    background: url(../images/icons/16/add.png) center center no-repeat #CDF;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-fields > tbody > tr > td.deleterow {
+    background: url(../images/icons/16/delete.png) center center no-repeat #FFF;
+    opacity: 0.5;
+    width: 16px;
+}
+table.register-fields > tbody > tr > td.deleterow:hover {
+    background: url(../images/icons/16/delete.png) center center no-repeat #FEE;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-fields label {
+    background-color: rgba(0, 0, 100, 0.1);
+    color: #038;
+}
+
+/* ====================================================
+ * REGISTER FIELDS DEFINITION/EDITING TABLE
+ * ==================================================== */
+table.register-field-options {
+    /*border: 1px solid #AAA;*/
+    border-collapse: collapse;
+    /*margin-top: 16px;*/
+    width: 81%;
+}
+table.register-field-options th, table.register-field-options td {
+    font-family: Consolas, Courier New, monospace;
+    font-size: 10pt;
+}
+table.register-field-options > tbody > tr.template { display: none; }
+table.register-field-options > tbody > tr > th {
+    background-color: #AAA;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#EEE), color-stop(1, #FFF));
+    border: 1px solid #CCC;
+    font-weight: bold;
+    padding: 4px 6px;
+    text-align: right;
+    text-shadow: 0 1px #FFF;
+    vertical-align: middle;
+    width: 40px;
+}
+table.register-field-options > thead > tr > th {
+    background-color: #666;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#F55), color-stop(0.5, #FCC));
+    border: 1px solid #CCC;
+    color: #000;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 0px 1px #FFF;
+}
+table.register-field-options thead th {
+    text-align: center;
+}
+table.register-field-options > tbody > tr:hover > th {
+    background-color: #AA8;
+    background-image: -webkit-gradient(linear, center bottom, center top, from(#CDF), color-stop(1, #FFF));
+}
+table.register-field-options td {
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#EEE), color-stop(0.2, #FFF));
+    border: 1px solid #DDD;
+    padding: 4px 6px;
+    text-align: left;
+    text-shadow: 1px 1px #EEE;
+}
+table.register-field-options td:hover {
+    background-color: #FF8;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#BCF), color-stop(0.2, #EEF));
+    pointer: default;
+    text-shadow: 1px 1px #EE6;
+}
+table.register-field-options td.missing {
+    background-color: #FFF;
+    /*background-image: url(../images/crosshatch.png);*/
+}
+table.register-field-options th.corner {
+    background: transparent !important;
+    border-top-color: #FFF;
+    border-left-color: #FFF;
+}
+table.register-field-options > tfoot > tr > td.addrow {
+    background: url(../images/icons/16/add.png) center center no-repeat #FFF;
+    height: 16px;
+    opacity: 0.5;
+}
+table.register-field-options > tfoot > tr > td.addrow:hover {
+    background: url(../images/icons/16/add.png) center center no-repeat #CDF;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-field-options > tbody > tr > td.deleterow {
+    background: url(../images/icons/16/delete.png) center center no-repeat #FFF;
+    opacity: 0.5;
+    width: 16px;
+}
+table.register-field-options > tbody > tr > td.deleterow:hover {
+    background: url(../images/icons/16/delete.png) center center no-repeat #FEE;
+    cursor: pointer;
+    opacity: 1;
+}
+table.register-field-options label {
+    background-color: rgba(0, 0, 100, 0.1);
+    color: #038;
+}
+
+div.balloon {
+    background-color: #F6F6F6;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px #555;
+    padding: 12px;
+    max-width: 600px;
+    max-height: 400px;
+    opacity: 0.95;
+    overflow-y: auto;
+    z-index: 32767;
+}
+div.balloon table {
+    background-color: #FFF;
+    border-collapse: collapse;
+}
+div.balloon table th {
+    background-color: #EEE;
+    font-weight: bold;
+}
+div.balloon table th, td {
+    border: 1px solid #CCC;
+    padding: 2px 4px;
+}
+
+span.editable {
+    /*border: 1px solid #EEE;*/
+    cursor: pointer;
+    display: block;
+    min-height: 18px;
+    min-width: 64px;
+    overflow: hidden;
+    position: relative;
+}
+span.editable span.edittip {
+    background-color: #333;
+    border: solid #000;
+    border-width: 0 1px 1px 1px;
+    bottom: -1.8em;
+    color: #FFF;
+    display: none;
+    font-size: 10px;
+    padding: 0; /*0 0.6em;*/
+    position: absolute;
+    right: 0;
+    text-shadow: none;
+    z-index: 100;
+}
+span.editable:hover {
+    /*background-color: #F00;*/
+}
+span.editable:hover span.edittip {
+    display: block;
+}
+span.editable textarea, span.editable input {
+    font: inherit;
+    display: none;
+    width: 98%;
+}
+span.editable.editing span.value {
+    display: none;
+}
+span.editable.editing textarea, span.editable.editing input {
+    display: inline-block;
+}
+span.editable.editing:hover span.edittip {
+    display: none;
+}
+
+input.changed, textarea.changed, select.changed {
+    box-shadow: 0 0 0.75em #00F;
+}
+
+/* ====================================================
+ * ANALYZER DATA TABLE
+ * ==================================================== */
+table.packets {
+    border: 1px solid #AAA;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+table.packets td.minwidth {
+    min-width: 953px;
+    width: 953px;
+}
+table.packets th, table.packets td {
+    font-family: Consolas, Courier New, monospace;
+    font-size: 10pt;
+}
+table.packets th {
+    background-color: #666;
+    border: 1px solid #AAA;
+    color: #FFF;
+    padding: 1px 3px;
+    position: relative;
+    text-align: left;
+}
+table.packets th a {
+    color: #FF0;
+}
+table.packets th a:hover {
+    color: #FFB;
+}
+table.packets td {
+    border: 1px solid #AAA;
+    padding: 1px 3px;
+    position: relative;
+}
+table.packets tr.read { background-color: #DFD; }
+table.packets tr.read:nth-child(odd) { background-color: #BFB; }
+table.packets tr.write { background-color: #FDC; }
+table.packets tr.write:nth-child(odd) { background-color: #FBA; }
+table.packets td span.detail {
+    position: relative;
+}
+table.packets td span.detail.dev, table.packets td span.detail.reg {
+    font-weight: bold;
+}
+table.packets td span.extended.ellipsis {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #666;
+    font-style: italic;
+}
+table.packets td span.extended.ellipsis:hover { background-color: rgba(255, 255, 255, 0.3); cursor: default; }
+table.packets td span.detail {
+    font-style: italic;
+}
+table.packets tr td:nth-child(3) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+table.packets td span.detail.dev   { background-color: rgba(0,   0,   0,   0.1); }
+table.packets td span.detail.reg   { background-color: rgba(192, 192, 255, 0.3); }
+table.packets td span.detail.data  { background-color: rgba(255, 255, 0,   0.3); }
+table.packets td span.detail:hover { background-color: rgba(255, 255, 255, 0.7); cursor: default; }
+
+table.packets div.tip {
+    display: none;
+}
+table.packets span.tipvis {
+    background-image: url(../images/tipvis-red.png);
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+}
+table.packets th span.tipvis {
+    background-image: url(../images/tipvis-yellow.png);
+}
+
+/* analyzer upload info list */
+ul.dump-info {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+ul.dump-info ul {
+    margin-bottom: 0;
+}
+ul.dump-info > li {
+    background: url(/assets/images/icons/16/info.png) 0 2px no-repeat;
+    padding-left: 20px;
+    padding-bottom: 4px;
+}
+ul.dump-info > li.ok {
+    background-image: url(/assets/images/icons/16/ok.png);
+}
+ul.dump-info > li.warning{
+    background-image: url(/assets/images/icons/16/warning.png);
+}
+ul.dump-info > li.error {
+    background-image: url(/assets/images/icons/16/error.png);
+}
+ul.dump-info > li.info {
+    background-image: url(/assets/images/icons/16/info.png);
+}
+
+ul.spaced > li, ol.spaced > li {
+    margin-bottom: 1em;
+}
+
+ul.spaced > li:last-child, ol.spaced > li:last-child {
+    margin-bottom: 0;
+}
+
+ul.emphasis, ol.emphasis {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 1em 1em 1em 2.5em;
+}
+ul.emphasis > li, ol.emphasis > li {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding: 1em;
+}
+
+span.domain {
+    color: #666;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+img.device-image {
+    box-shadow: 0.5em 0.5em 1em #AAA;
+    -moz-box-shadow: 0.5em 0.5em 1em #AAA;
+    -webkit-box-shadow: 0.5em 0.5em 1em #AAA;
+    float: right;
+    margin-left: 32px;
+}
+
+code.inline {
+    background-color: #F6F6F6;
+    display: inline-block;
+    font-family: Consolas, "Courier New", monospace;
+    padding: 0 3px;
+}
+
+div.syntaxhighlighter {
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+ul.plain { list-style: none; }
+ul.plain span.icon { margin-top: 2px; }
+span.icon { display: block; width: 16px; height: 16px; float: left; margin-right: 4px; }
+span.icon.right { float: right; margin-right: 0; margin-left: 4px; }
+span.icon.product { background-image: url(../images/icons/16/processor.png); }
+span.icon.purchase { background-image: url(../images/icons/16/money_dollar.png); }
+span.icon.documentation { background-image: url(../images/icons/16/file_extension_rtf.png); }
+span.icon.code { background-image: url(../images/icons/16/file_extension_log.png); }
+span.icon.datasheet { background-image: url(../images/icons/16/file_extension_rtf.png); }
+span.icon.dump { background-image: url(../images/icons/16/document_layout.png); }
+
+/* BUTTON STYLES */
+a.button, div.button, button {
+    background: #FFF url(../images/btn-gradient.png) 50% repeat-x;
+    border: 1px solid;
+    border-color: #BBB #888 #888 #BBB;
+    color: #000;
+    display: block;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 3px 8px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+a.button:hover, button:hover {
+    background-color: #EEE;
+    border-color: #AAA #666 #666 #AAA;
+}
+
+a.button:active, button:active {
+    background: #AAA;
+    border-color: #555 #AAA #AAA #555;
+}
+
+a.button.big, button.big {
+    font-size: 1.4em;
+    line-height: 1em;
+    padding: 5px 10px;
+}
+
+a.button.small, button.small {
+    font-size: 0.9em;
+    line-height: 1em;
+    padding: 2px 5px;
+}
+
+a.button.blue {
+    background-color: #1375BC;
+    border-color: #36F #36A #36A #36F;
+    color: #FFF;
+}
+a.button.blue:hover {
+    background-color: #2385EC;
+    border-color: #47F #56A #56A #47F;
+}
+a.button.blue:active {
+    background-color: #1365AC;
+    border-color: #36F #36A #36A #36F;
+}
+
+a.button.green {
+    background-color: #39B54A;
+    border-color: #ADA #2A2 #2A2 #ADA;
+    color: #FFF;
+}
+a.button.green:hover {
+    background-color: #59D55A;
+    border-color: #CFC #4B4 #4B4 #CFC;
+}
+a.button.green:active {
+    background-color: #19A51A;
+    border-color: #ADA #2A2 #2A2 #ADA;
+}
+
+a.button.orange {
+    background-color: #F57F29;
+    border-color: #DCA #872 #872 #DCA;
+    color: #FFF;
+}
+a.button.orange:hover {
+    background-color: #F59F59;
+    border-color: #FEB #CB4 #CB4 #FEB;
+}
+a.button.orange:active {
+    background-color: #D55F09;
+    border-color: #DCA #872 #872 #DCA;
+}
+
+a.button.red {
+    background-color: #F52929;
+    border-color: #DAA #822 #822 #DAA;
+    color: #FFF;
+}
+a.button.red:hover {
+    background-color: #F55959;
+    border-color: #FBB #C44 #C44 #FBB;
+}
+a.button.red:active {
+    background-color: #D50909;
+    border-color: #DAA #822 #822 #DAA;
+}

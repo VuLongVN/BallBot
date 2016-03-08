@@ -1,0 +1,125 @@
+/* FONT SHORTCUTS */
+.font12e { font-size: 1.2em; line-height: 1.2em; }
+.font13e { font-size: 1.3em; line-height: 1.2em; }
+.font14e { font-size: 1.4em; line-height: 1.2em; }
+.font15e { font-size: 1.5em; line-height: 1.2em; }
+.font20e { font-size: 2.0em; line-height: 1.2em; }
+
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+
+/* POSITIONING SHORTCUTS */
+.autoCenter { margin-left: auto; margin-right: auto; }
+
+.alignLeft { text-align: left; }
+.alignCenter { text-align: center; }
+.alightRight { text-align: right; }
+
+.valignTop { vertical-align: top; }
+.valignMiddle { vertical-align: middle; }
+.valignBottom { vertical-align: bottom; }
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+
+.imageLeft { float: left; margin-right: 24px; margin-bottom: 16px; }
+.imageRight { float: right; margin-left: 24px; margin-bottom: 16px; }
+
+.absolute { position: absolute; }
+.relative { position: relative; }
+.fixed { position: fixed; }
+.static { position: static; }
+
+.inline { display: inline; }
+.block { display: block; }
+.hidden { display: none; }
+.invisible { visibility: hidden; }
+
+.overhide { overflow: hidden; }
+.overclear { overflow: hidden; clear: both; }
+.clear { clear: both; }
+.clearLeft { clear: left; }
+.clearRight { clear: right; }
+
+/* ABSOLUTE SIZE SHORTCUTS */
+.width100a { width: 100px; }
+.width200a { width: 200px; }
+.width300a { width: 300px; }
+.width400a { width: 400px; }
+.width500a { width: 500px; }
+.width600a { width: 600px; }
+.width700a { width: 700px; }
+.width800a { width: 800px; }
+.width900a { width: 900px; }
+.width1000a { width: 1000px; }
+
+/* RELATIVE SIZE SHORTCUTS */
+.width10p { width: 10%; }
+.width20p { width: 20%; }
+.width25p { width: 25%; }
+.width30p { width: 30%; }
+.width33p { width: 33%; }
+.width40p { width: 40%; }
+.width50p { width: 50%; }
+.width60p { width: 60%; }
+.width70p { width: 70%; }
+.width75p { width: 75%; }
+.width80p { width: 80%; }
+.width90p { width: 90%; }
+.width100p { width: 100%; }
+
+/* MARGIN SHORTCUTS */
+.margin8 { margin: 8px; }
+.margin16 { margin: 16px; }
+.margin32 { margin: 32px; }
+.margin64 { margin: 64px; }
+
+.marginTop8 { margin-top: 8px; }
+.marginTop16 { margin-top: 16px; }
+.marginTop32 { margin-top: 32px; }
+.marginTop64 { margin-top: 64px; }
+
+.marginBottom8 { margin-bottom: 8px; }
+.marginBottom16 { margin-bottom: 16px; }
+.marginBottom32 { margin-bottom: 32px; }
+.marginBottom64 { margin-bottom: 64px; }
+
+.marginLeft8 { margin-left: 8px; }
+.marginLeft12 { margin-left: 12px; }
+.marginLeft16 { margin-left: 16px; }
+.marginLeft32 { margin-left: 32px; }
+.marginLeft64 { margin-left: 64px; }
+
+.marginRight8 { margin-right: 8px; }
+.marginRight12 { margin-right: 12px; }
+.marginRight16 { margin-right: 16px; }
+.marginRight32 { margin-right: 32px; }
+.marginRight64 { margin-right: 64px; }
+
+.marginHorizontal8 { margin-left: 8px; margin-right: 8px; }
+.marginHorizontal16 { margin-left: 16px; margin-right: 16px; }
+.marginHorizontal32 { margin-left: 32px; margin-right: 32px; }
+.marginHorizontal64 { margin-left: 64px; margin-right: 64px; }
+
+.marginVertical8 { margin-top: 8px; margin-bottom: 8px; }
+.marginVertical16 { margin-top: 16px; margin-bottom: 16px; }
+.marginVertical32 { margin-top: 32px; margin-bottom: 32px; }
+.marginVertical64 { margin-top: 64px; margin-bottom: 64px; }
+
+/* PADDING SHORTCUTS */
+.padding8 { padding: 8px; }
+.padding12 { padding: 12px; }
+.padding16 { padding: 16px; }
+.padding32 { padding: 32px; }
+.padding64 { padding: 64px; }
+
+.paddingHorizontal8 { padding-left: 8px; padding-right: 8px; }
+.paddingHorizontal16 { padding-left: 16px; padding-right: 16px; }
+.paddingHorizontal32 { padding-left: 32px; padding-right: 32px; }
+.paddingHorizontal64 { padding-left: 64px; padding-right: 64px; }
+
+.paddingVertical8 { padding-top: 8px; padding-bottom: 8px; }
+.paddingVertical16 { padding-top: 16px; padding-bottom: 16px; }
+.paddingVertical32 { padding-top: 32px; padding-bottom: 32px; }
+.paddingVertical64 { padding-top: 64px; padding-bottom: 64px; }

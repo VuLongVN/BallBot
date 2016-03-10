@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=+24VDC Pin=D10-2
+Removed Pin From Net: NetName=+24VDC Pin=D11-2
+Removed Pin From Net: NetName=+24VDC Pin=D12-2
+Removed Pin From Net: NetName=+24VDC Pin=D13-2
+Added Pin To Net: NetName=VIN Pin=D10-2
+Added Pin To Net: NetName=VIN Pin=D11-2
+Added Pin To Net: NetName=VIN Pin=D12-2
+Added Pin To Net: NetName=VIN Pin=D13-2

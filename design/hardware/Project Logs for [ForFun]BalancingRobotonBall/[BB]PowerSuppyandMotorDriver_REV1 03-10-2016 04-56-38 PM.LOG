@@ -1,0 +1,4 @@
+Added Component: Designator=H1(Heatsink TO-220)
+Added Component: Designator=H2(Heatsink TO-220)
+Added Member To Class: ClassName=[BB]PowerSuppyandMotorDriver_REV1.0 Member=Component H1 Heatsink TO220
+Added Member To Class: ClassName=[BB]PowerSuppyandMotorDriver_REV1.0 Member=Component H2 Heatsink TO220

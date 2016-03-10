@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=READBATRVOLT Pin=P3-10
+Change Net Name : Old Net Name=READBATRVOLT New Net Name=NetP8_2
+Added Pin To Net: NetName=READBATRVOLT Pin=P3-10
+Added Net: Name=READBATRVOLT

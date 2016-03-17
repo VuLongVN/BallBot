@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=PWMBUZZER Pin=P3-17
-Removed Pin From Net: NetName=PE5 Pin=P4-14
-Added Pin To Net: NetName=PE5 Pin=P3-17
-Added Pin To Net: NetName=PWMBUZZER Pin=P4-14
-Change Net Name : Old Net Name=PE5 New Net Name=PA7

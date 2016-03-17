@@ -1,0 +1,15 @@
+Code Keil C:
+Tuần này:
+
+PWM test động cơ -> Hàm điều khiển động cơ controlMotor(motor, speed, direction)
+Đọc nút nhấn.
+ADC. 1.9V ADC ~ 24VDC.
+
+Tuần sau:
+Đọc I2C.
+
+acc -> thetaX, thetaY, thetaZ
+gyro -> thetadotX, thetadotY, thetadotZ
+exti để đếm 3 encoder -> omegaA, omegaB, omegaC, phiA, phiB, phiC -> vX, vY, vZ=0, coordiX, coordiY, coordiZ=0.
+dlqr(...)
+kalman(...)

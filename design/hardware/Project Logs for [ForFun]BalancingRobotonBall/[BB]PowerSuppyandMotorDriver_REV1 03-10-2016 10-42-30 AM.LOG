@@ -1,7 +1,0 @@
-Added Component: Designator=P9(Header 1X3)
-Added Pin To Net: NetName=GND Pin=P8-3
-Added Pin To Net: NetName=VDD Pin=P9-1
-Added Pin To Net: NetName=READBATRVOLT Pin=P9-2
-Added Pin To Net: NetName=GND Pin=P9-3
-Added Pin To Net: NetName=GND Pin=U3-4
-Added Member To Class: ClassName=[BB]PowerSuppyandMotorDriver_REV1.0 Member=Component P9 Header 1X3

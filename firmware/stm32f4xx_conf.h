@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    GPIO/GPIO_IOToggle/stm32f4xx_conf.h  
+  * @file    EXTI/EXTI_Example/stm32f4xx_conf.h  
   * @author  MCD Application Team
   * @version V1.6.1
   * @date    21-October-2015

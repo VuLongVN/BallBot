@@ -1,9 +1,17 @@
-#ifndef __INCLUDE_H
-#define __INCLUDE_H
+/**
+ * @file	include.h
+ * @brief	Global include file
+ */
+ 
+#ifndef __INCLUDE_H_
+#define __INCLUDE_H_
 
-#include "stm32f4xx.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "globalDefine.h"
+#include <math.h>
 
-#endif //__INCLUDE_H
+#include "stm32f4xx.h"
+#include "define.h"
+#include "MotorControl.h"
+
+#endif /* INCLUDE_H_ */

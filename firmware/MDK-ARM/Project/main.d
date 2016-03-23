@@ -38,5 +38,6 @@
 .\project\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\project\main.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\project\main.o: ..\define.h
+.\project\main.o: ..\include.h
 .\project\main.o: ..\Include\MotorControl.h
-.\project\main.o: ..\..\firmware\include.h
+.\project\main.o: ..\Include\Button.h

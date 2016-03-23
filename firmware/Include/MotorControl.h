@@ -1,8 +1,7 @@
-/*
- * PWM.h
- *
- *  Created on: Mar 18, 2016
- *      Author: DKhanh
+/**
+ * @file	Motor control.h
+ * @brief	Motor control
+ * @authors VuLong DuyKhanh
  */
 
 #ifndef __SPEEDCONTROL_H

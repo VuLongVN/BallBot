@@ -15,14 +15,20 @@ int main(void)
 	
 	#endif
 
+	#ifdef TESTBUTTON
+	initButtonOnDiscoveryBoard();
+	#endif
+	
   while (1)
 		{
-			#ifdef TEST
+			#ifdef TESTMOTOR
 			PWMControl(MOTOR_A, CLOCKWISE, 50);
 			PWMControl(MOTOR_B, CLOCKWISE, 50);
 			PWMControl(MOTOR_C, CLOCKWISE, 50);
 			PWMControl(MOTOR_D, CLOCKWISE, 50);
 			#endif
+			
+			
 		}
 }
 

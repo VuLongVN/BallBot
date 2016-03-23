@@ -666,6 +666,26 @@
               <FileType>1</FileType>
               <FilePath>..\Source\MotorControl.c</FilePath>
             </File>
+            <File>
+              <FileName>Button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Button.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Include</GroupName>
+          <Files>
+            <File>
+              <FileName>Button.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\Button.h</FilePath>
+            </File>
+            <File>
+              <FileName>MotorControl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\MotorControl.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

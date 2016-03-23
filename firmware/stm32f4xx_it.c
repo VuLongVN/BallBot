@@ -1,4 +1,5 @@
 #include "stm32f4xx_it.h"
+#include "include.h"
 
 void NMI_Handler(void)
 {
@@ -46,7 +47,14 @@ void SysTick_Handler(void)
 
 void EXTI0_IRQHandler(void)
 {
-
+	if (EXTI_GetITStatus(PA0_EXTI_LINE) != RESET) 
+	{
+		/* Do your stuff when PA0 is changed */
+		GPIO_WriteBit(LEDA_BASE, LEDA_PIN, Bit_SET);
+		
+		/* Clear interrupt flag */
+		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
+	}
 }
 
 void EXTI9_5_IRQHandler(void)

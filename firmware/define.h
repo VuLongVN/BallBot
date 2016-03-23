@@ -1,15 +1,19 @@
 /**
  * @file	define.h
  * @brief	Global define file
+ * @authors VuLong DuyKhanh
  */
 
 
 #ifndef __DEFINE_H_
 #define __DEFINE_H_
 
+#include "include.h"
+
 #define ON	1
 #define OFF	0
-#define TEST
+// #define TESTMOTOR
+#define TESTBUTTON
 
 typedef enum
 {

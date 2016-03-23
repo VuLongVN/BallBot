@@ -13,5 +13,6 @@
 #include "stm32f4xx.h"
 #include "define.h"
 #include "MotorControl.h"
+#include "Button.h"
 
 #endif /* INCLUDE_H_ */

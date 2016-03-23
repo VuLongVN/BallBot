@@ -1,5 +1,6 @@
 #include "stm32f4xx_it.h"
 #include "include.h"
+volatile  count;
 
 void NMI_Handler(void)
 {
@@ -47,13 +48,13 @@ void SysTick_Handler(void)
 
 void EXTI0_IRQHandler(void)
 {
-	if (EXTI_GetITStatus(PA0_EXTI_LINE) != RESET) 
+	if(EXTI_GetITStatus(EXTI_Line0) != RESET) // chong rung 
+		if(GPIO_ReadInputDataBit(GPIOA , GPIO_Pin_0)) 
 	{
+			count++;
 		/* Do your stuff when PA0 is changed */
-		GPIO_WriteBit(LEDA_BASE, LEDA_PIN, Bit_SET);
-		
-		/* Clear interrupt flag */
-		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
+			GPIO_ToggleBits(GPIOD,GPIO_Pin_12);
+			EXTI->PR = EXTI_Line0;
 	}
 }
 

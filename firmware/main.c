@@ -1,6 +1,7 @@
 #include "include.h"
 
 void GPIOConfig(void);
+#define	TESTBUTTON
 
 int main(void)
 {
@@ -8,6 +9,7 @@ int main(void)
 	GPIOConfig();
 	PWMConfig();
   motorDirConfig();
+ 
 
 	#ifdef TEST
 	// GPIO_WriteBit(MOTOR_A_DIR_BASE, MOTOR_A_DIR_PIN, Bit_SET);

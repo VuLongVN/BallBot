@@ -12,10 +12,18 @@ int main(void)
 	#ifdef TEST
 	// GPIO_WriteBit(MOTOR_A_DIR_BASE, MOTOR_A_DIR_PIN, Bit_SET);
 	// GPIO_WriteBit(MOTOR_A_SPEED_BASE, MOTOR_A_SPEED_PIN, Bit_SET);
-	 PWMControl(MOTOR_A, CLOCKWISE, 50);
+	
 	#endif
 
-  while (1);
+  while (1)
+		{
+			#ifdef TEST
+			PWMControl(MOTOR_A, CLOCKWISE, 50);
+			PWMControl(MOTOR_B, CLOCKWISE, 50);
+			PWMControl(MOTOR_C, CLOCKWISE, 50);
+			PWMControl(MOTOR_D, CLOCKWISE, 50);
+			#endif
+		}
 }
 
 void GPIOConfig(void)

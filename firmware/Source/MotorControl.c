@@ -26,7 +26,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 		GPIO_WriteBit(LEDA_BASE, LEDA_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
-		TIM2->CCR1 = motorSpeed * (TIM_PERIOD+1) / 100 - 1; 
+		TIM2->CCR3 = motorSpeed * (TIM_PERIOD+1) / 100 - 1; 
 		break;
 	}		
 	case MOTOR_B:
@@ -36,7 +36,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 		GPIO_WriteBit(LEDB_BASE, LEDB_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
-	  TIM2->CCR2 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
+	  TIM2->CCR4 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
 		break;
 	}
 	case MOTOR_C:
@@ -46,7 +46,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 		GPIO_WriteBit(LEDC_BASE, LEDC_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
-		TIM4->CCR1 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
+		TIM4->CCR3 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
 		break;
 	}
 	case MOTOR_D:
@@ -56,7 +56,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 		GPIO_WriteBit(LEDD_BASE, LEDD_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
-		TIM9->CCR1 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
+		TIM9->CCR2 =   motorSpeed * (TIM_PERIOD+1) / 100 - 1;  
 		break;
 	}
 	}
@@ -64,10 +64,10 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 
 void PWMConfig(void)
 { 
-  RCC_APB1PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
-	RCC_APB1PeriphClockCmd(RCC_APB2Periph_TIM9, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM9, ENABLE);
   RCC_AHB1PeriphClockCmd(	PWM_MOTOR_A_PERIPH |\
 													PWM_MOTOR_B_PERIPH | \
 													PWM_MOTOR_C_PERIPH | \
@@ -105,9 +105,6 @@ void PWMConfig(void)
   PWM_TIM_TimeBaseStructure.TIM_ClockDivision = 0;
   PWM_TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 
-	TIM_TimeBaseInit(TIM4, &PWM_TIM_TimeBaseStructure);
-	TIM_TimeBaseInit(TIM2, &PWM_TIM_TimeBaseStructure);
-	TIM_TimeBaseInit(TIM9, &PWM_TIM_TimeBaseStructure);
 
   PWM_TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
   PWM_TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; 
@@ -116,22 +113,26 @@ void PWMConfig(void)
   PWM_TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_High;
   PWM_TIM_OCInitStructure.TIM_Pulse = 0;
   //TIM_OCStructInit(&TIM_OCInitStructure);
-  
-  TIM_OC1Init(TIM4, &PWM_TIM_OCInitStructure);  
-  TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);
-
-  TIM_OC2Init(TIM2, &PWM_TIM_OCInitStructure);
-  TIM_OC2PreloadConfig(TIM2, TIM_OCPreload_Enable);
-
-  TIM_OC3Init(TIM2, &PWM_TIM_OCInitStructure);
-  TIM_OC3PreloadConfig(TIM2, TIM_OCPreload_Enable);
 	
-//TIM_OC4Init(TIM9, &PWM_TIM_OCInitStructure);
-// TIM_OC4PreloadConfig(TIM9, TIM_OCPreload_Enable);
+  TIM_TimeBaseInit(TIM2, &PWM_TIM_TimeBaseStructure);
+  TIM_OC3Init(TIM2, &PWM_TIM_OCInitStructure);  
+  TIM_OC3PreloadConfig(TIM2, TIM_OCPreload_Enable);
+
+	TIM_TimeBaseInit(TIM2, &PWM_TIM_TimeBaseStructure);
+  TIM_OC4Init(TIM2, &PWM_TIM_OCInitStructure);
+  TIM_OC4PreloadConfig(TIM2, TIM_OCPreload_Enable);
+
+	TIM_TimeBaseInit(TIM4, &PWM_TIM_TimeBaseStructure);
+  TIM_OC3Init(TIM4, &PWM_TIM_OCInitStructure);
+  TIM_OC3PreloadConfig(TIM4, TIM_OCPreload_Enable);
+	
+	TIM_TimeBaseInit(TIM9, &PWM_TIM_TimeBaseStructure);
+	TIM_OC2Init(TIM9, &PWM_TIM_OCInitStructure);
+	TIM_OC2PreloadConfig(TIM9, TIM_OCPreload_Enable);
 
 	TIM_ARRPreloadConfig(TIM2, ENABLE);
 	TIM_ARRPreloadConfig(TIM4, ENABLE);
-//	TIM_ARRPreloadConfig(TIM9, ENABLE);
+	TIM_ARRPreloadConfig(TIM9, ENABLE);
 
   /* TIM1 enable counter */
 	TIM_Cmd(TIM2, ENABLE);

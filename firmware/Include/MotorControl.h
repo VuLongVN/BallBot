@@ -14,12 +14,12 @@
 // = (1000000/1000)-1 = 999
 #define TIM_PERIOD 			999
 
-#define MOTOR_A_DIR_PIN			GPIO_Pin_0			// Pin PA0
+#define MOTOR_A_DIR_PIN			GPIO_Pin_4			// Pin PA4
 #define MOTOR_B_DIR_PIN			GPIO_Pin_1			// Pin PA1
 #define MOTOR_C_DIR_PIN			GPIO_Pin_9			// Pin PB9
 #define MOTOR_D_DIR_PIN			GPIO_Pin_4			// Pin PE4
 
-#define MOTOR_A_DIR_BASE		GPIOA						// Pin PA0
+#define MOTOR_A_DIR_BASE		GPIOA						// Pin PA4
 #define MOTOR_B_DIR_BASE		GPIOA						// Pin PA1
 #define MOTOR_C_DIR_BASE		GPIOB						// Pin PB9
 #define MOTOR_D_DIR_BASE		GPIOE						// Pin PE4
@@ -40,7 +40,7 @@
 #define PWM_MOTOR_A_PERIPH	RCC_AHB1Periph_GPIOA		// Pin PA2
 #define PWM_MOTOR_B_PERIPH	RCC_AHB1Periph_GPIOA		// Pin PA3
 #define PWM_MOTOR_C_PERIPH	RCC_AHB1Periph_GPIOB		// Pin PB8
-#define PWM_MOTOR_D_PERIPH	RCC_AHB1Periph_GPIOC		// Pin PE6
+#define PWM_MOTOR_D_PERIPH	RCC_AHB1Periph_GPIOE		// Pin PE6
 
 #define MOTOR_A_AF_PIN		GPIO_PinSource2
 #define MOTOR_B_AF_PIN		GPIO_PinSource3

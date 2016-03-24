@@ -1,6 +1,7 @@
 #include "include.h"
 
 void GPIOConfig(void);
+volatile uint8_t PWM_motorADutyCycle = 5;
 
 int main(void)
 {
@@ -22,10 +23,10 @@ int main(void)
   while (1)
 		{
 			#ifdef TESTMOTOR
-			PWMControl(MOTOR_A, CLOCKWISE, 50);
-			PWMControl(MOTOR_B, CLOCKWISE, 50);
-			PWMControl(MOTOR_C, CLOCKWISE, 50);
-			PWMControl(MOTOR_D, CLOCKWISE, 50);
+			PWMControl(MOTOR_A, CLOCKWISE, PWM_motorADutyCycle);
+//			PWMControl(MOTOR_B, CLOCKWISE, 50);
+//			PWMControl(MOTOR_C, CLOCKWISE, 50);
+//			PWMControl(MOTOR_D, CLOCKWISE, 50);
 			#endif
 			
 			

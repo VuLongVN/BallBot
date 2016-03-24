@@ -12,7 +12,7 @@
 
 #define ON	1
 #define OFF	0
-// #define TESTMOTOR
+#define TESTMOTOR
 #define TESTBUTTON
 
 typedef enum

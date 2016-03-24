@@ -1,5 +1,7 @@
 #include "stm32f4xx_it.h"
 #include "include.h"
+volatile int count;
+extern volatile uint8_t PWM_motorADutyCycle;
 
 void NMI_Handler(void)
 {
@@ -47,11 +49,15 @@ void SysTick_Handler(void)
 
 void EXTI0_IRQHandler(void)
 {
-	if (EXTI_GetITStatus(PA0_EXTI_LINE) != RESET) 
+	if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+		if(GPIO_ReadInputDataBit(GPIOA , GPIO_Pin_0))
 	{
+		count++;
 		/* Do your stuff when PA0 is changed */
-		GPIO_WriteBit(LEDA_BASE, LEDA_PIN, Bit_SET);
-		
+    GPIO_ToggleBits(LEDD_BASE,LEDD_PIN);
+		PWM_motorADutyCycle +=5;
+		if (PWM_motorADutyCycle>= 100)
+			PWM_motorADutyCycle = 100;
 		/* Clear interrupt flag */
 		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
 	}

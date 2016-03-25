@@ -1,7 +1,7 @@
 #include "include.h"
 
 void GPIOConfig(void);
-volatile uint8_t PWM_motorADutyCycle = 5;
+volatile uint8_t PWM_motorADutyCycle = 30;
 
 int main(void)
 {
@@ -19,14 +19,18 @@ int main(void)
 	#ifdef TESTBUTTON
 	initButtonOnDiscoveryBoard();
 	#endif
-	
+	#ifdef TESTMOTOR
+	//GPIO_WriteBit(MOTOR_B_SPEED_BASE, MOTOR_B_SPEED_PIN, Bit_SET);
+	//GPIO_WriteBit(MOTOR_B_DIR_BASE, MOTOR_B_DIR_PIN, Bit_SET);
+	#endif
   while (1)
 		{
 			#ifdef TESTMOTOR
-			PWMControl(MOTOR_A, CLOCKWISE, PWM_motorADutyCycle);
-//			PWMControl(MOTOR_B, CLOCKWISE, 50);
+			//PWMControl(MOTOR_A, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
+				PWMControl(MOTOR_B, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
 //			PWMControl(MOTOR_C, CLOCKWISE, 50);
 //			PWMControl(MOTOR_D, CLOCKWISE, 50);
+				
 			#endif
 			
 			

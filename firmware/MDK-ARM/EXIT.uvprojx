@@ -671,6 +671,21 @@
               <FileType>1</FileType>
               <FilePath>..\Source\Button.c</FilePath>
             </File>
+            <File>
+              <FileName>IMU.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\IMU.c</FilePath>
+            </File>
+            <File>
+              <FileName>Controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Controller.c</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Encoder.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

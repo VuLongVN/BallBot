@@ -46,6 +46,9 @@
 ".\project\stm32f4xx_usart.o"
 ".\project\motorcontrol.o"
 ".\project\button.o"
+".\project\imu.o"
+".\project\controller.o"
+".\project\encoder.o"
 --strict --scatter ".\Project\BallBot.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

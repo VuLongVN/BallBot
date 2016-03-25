@@ -14,5 +14,7 @@
 #include "define.h"
 #include "MotorControl.h"
 #include "Button.h"
+#include "IMU.h"
+#include "Encoder.h"
 
 #endif /* INCLUDE_H_ */

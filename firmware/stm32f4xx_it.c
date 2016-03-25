@@ -54,10 +54,9 @@ void EXTI0_IRQHandler(void)
 	{
 		count++;
 		/* Do your stuff when PA0 is changed */
-    GPIO_ToggleBits(LEDD_BASE,LEDD_PIN);
+    GPIO_ToggleBits(LEDD_BASE, LEDD_PIN);
 		PWM_motorADutyCycle +=5;
-		if (PWM_motorADutyCycle>= 100)
-			PWM_motorADutyCycle = 100;
+		if (PWM_motorADutyCycle>= 90)				PWM_motorADutyCycle = 90;
 		/* Clear interrupt flag */
 		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
 	}

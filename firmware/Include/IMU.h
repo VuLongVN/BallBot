@@ -8,17 +8,6 @@
 
 #include "include.h"
 
-typedef struct
-{
-	
-} accelerometerStruct;
-
-typedef struct
-{
-	
-}gyroscopeStruct;
-
-
 /* Cua tui no viet
 void IMUConfigure(void);
     //imuRuntimeConfig_t *initialImuRuntimeConfig,

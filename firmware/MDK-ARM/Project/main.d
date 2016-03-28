@@ -41,3 +41,7 @@
 .\project\main.o: ..\include.h
 .\project\main.o: ..\Include\MotorControl.h
 .\project\main.o: ..\Include\Button.h
+.\project\main.o: ..\Include\IMU.h
+.\project\main.o: ..\Include\Encoder.h
+.\project\main.o: ..\Include\PID.h
+.\project\main.o: ..\Include\Controller.h

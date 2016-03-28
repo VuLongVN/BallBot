@@ -686,6 +686,11 @@
               <FileType>1</FileType>
               <FilePath>..\Source\Encoder.c</FilePath>
             </File>
+            <File>
+              <FileName>PID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\PID.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -700,6 +705,26 @@
               <FileName>MotorControl.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Include\MotorControl.h</FilePath>
+            </File>
+            <File>
+              <FileName>PID.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\PID.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMU.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\IMU.h</FilePath>
+            </File>
+            <File>
+              <FileName>Encoder.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\Encoder.h</FilePath>
+            </File>
+            <File>
+              <FileName>Controller.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\Controller.h</FilePath>
             </File>
           </Files>
         </Group>

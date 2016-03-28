@@ -42,3 +42,7 @@
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: ..\Include\MotorControl.h
 .\project\stm32f4xx_it.o: ..\Include\Button.h
+.\project\stm32f4xx_it.o: ..\Include\IMU.h
+.\project\stm32f4xx_it.o: ..\Include\Encoder.h
+.\project\stm32f4xx_it.o: ..\Include\PID.h
+.\project\stm32f4xx_it.o: ..\Include\Controller.h

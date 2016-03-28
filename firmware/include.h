@@ -16,5 +16,7 @@
 #include "Button.h"
 #include "IMU.h"
 #include "Encoder.h"
+#include "PID.h"
+#include "Controller.h"	
 
 #endif /* INCLUDE_H_ */

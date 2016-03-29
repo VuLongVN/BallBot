@@ -22,22 +22,50 @@ Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
 E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\BallBot_V1.uvprojx
-Project File Date:  03/23/2016
+Project File Date:  03/28/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BallBot_V1'
+compiling stm32f4xx_it.c...
 compiling main.c...
+compiling IMU.c...
+compiling Button.c...
+compiling Encoder.c...
+..\Source\Encoder.c(36): warning:  #177-D: variable "Encoder_NVIC_InitStructure" was declared but never referenced
+  	NVIC_InitTypeDef 						Encoder_NVIC_InitStructure;
+..\Source\Encoder.c(161): warning:  #1-D: last line of file ends without a newline
+  	
+..\Source\Encoder.c: 2 warnings, 0 errors
+compiling Controller.c...
+compiling MotorControl.c...
+..\Source\MotorControl.c(25): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_A_DIR_BASE, 
+OTOR_A_DIR_PIN, moterDir);
+..\Source\MotorControl.c(35): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_B_DIR_BASE, 
+OTOR_B_DIR_PIN, moterDir);
+..\Source\MotorControl.c(45): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_C_DIR_BASE, 
+OTOR_C_DIR_PIN, moterDir);
+..\Source\MotorControl.c(55): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_D_DIR_BASE, 
+OTOR_D_DIR_PIN, moterDir);
+..\Source\MotorControl.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=2964 RO-data=424 RW-data=60 ZI-data=1668  
-".\Project\BallBot_V1.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=4572 RO-data=424 RW-data=116 ZI-data=1668  
+".\Project\BallBot_V1.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

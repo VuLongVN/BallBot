@@ -1,8 +1,9 @@
 .\project\motorcontrol.o: ..\Source\MotorControl.c
 .\project\motorcontrol.o: ..\..\firmware\include.h
-.\project\motorcontrol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\motorcontrol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\project\motorcontrol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\motorcontrol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\motorcontrol.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\motorcontrol.o: ..\..\firmware\stm32f4xx.h
 .\project\motorcontrol.o: ..\CMSIS\Include\core_cm4.h
 .\project\motorcontrol.o: ..\CMSIS\Include\core_cmInstr.h
@@ -41,3 +42,5 @@
 .\project\motorcontrol.o: ..\..\firmware\include.h
 .\project\motorcontrol.o: ..\Include\MotorControl.h
 .\project\motorcontrol.o: ..\Include\Button.h
+.\project\motorcontrol.o: ..\Include\IMU.h
+.\project\motorcontrol.o: ..\Include\Encoder.h

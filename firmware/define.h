@@ -12,8 +12,14 @@
 
 #define ON	1
 #define OFF	0
-// #define TESTMOTOR
+#define TESTMOTOR
 #define TESTBUTTON
+#define SAMPLE_TIME_IMU 		(100)  	// us
+#define SAMPLE_TIME_ENCODER	(100)		// us
+
+// TIM_Period = (Timer_tick_frequence/PWM_frequence )-1 =
+// = (1000000/1000)-1 = 999
+#define TIM_PERIOD 					(999)
 
 typedef enum
 {
@@ -22,6 +28,13 @@ typedef enum
 	MOTOR_C,
 	MOTOR_D
 } MOTOR;
+
+typedef enum
+{
+	AXIS_X = 0,
+	AXIS_Y,
+	AXIS_Z,
+} AXIS;
 
 typedef struct
 {

@@ -1,9 +1,10 @@
 Dependencies for Project 'BallBot_V1', Target 'BallBot_V1': (DO NOT MODIFY !)
-F (..\main.c)(0x56F2BA9E)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\main.o --omf_browse .\project\main.crf --depend .\project\main.d)
-I (..\include.h)(0x56F268C0)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+F (..\main.c)(0x56FA92C6)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\main.o --omf_browse .\project\main.crf --depend .\project\main.d)
+I (..\include.h)(0x56F815E1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
 I (..\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
 I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
@@ -38,10 +39,12 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
-I (..\define.h)(0x56F268C0)
-I (..\Include\MotorControl.h)(0x56F268B9)
-I (..\Include\Button.h)(0x56F268B9)
-F (..\stm32f4xx_it.c)(0x56F2B737)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\stm32f4xx_it.o --omf_browse .\project\stm32f4xx_it.crf --depend .\project\stm32f4xx_it.d)
+I (..\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
+F (..\stm32f4xx_it.c)(0x56F9FBF5)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\stm32f4xx_it.o --omf_browse .\project\stm32f4xx_it.crf --depend .\project\stm32f4xx_it.d)
 I (..\stm32f4xx_it.h)(0x56F268C0)
 I (..\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
@@ -78,12 +81,15 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
-I (..\include.h)(0x56F268C0)
+I (..\include.h)(0x56F815E1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
-I (..\define.h)(0x56F268C0)
-I (..\Include\MotorControl.h)(0x56F268B9)
-I (..\Include\Button.h)(0x56F268B9)
+I (..\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
 F (..\system_stm32f4xx.c)(0x56F268C0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\system_stm32f4xx.o --omf_browse .\project\system_stm32f4xx.crf --depend .\project\system_stm32f4xx.d)
 I (..\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
@@ -506,11 +512,12 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
-F (..\Source\Button.c)(0x56F2BA01)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\button.o --omf_browse .\project\button.crf --depend .\project\button.d)
-I (..\..\firmware\include.h)(0x56F268C0)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+F (..\Source\IMU.c)(0x56F80E51)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\imu.o --omf_browse .\project\imu.crf --depend .\project\imu.d)
+I (..\..\firmware\include.h)(0x56F815E1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
 I (..\..\firmware\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
 I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
@@ -544,14 +551,17 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
-I (..\..\firmware\define.h)(0x56F268C0)
-I (..\Include\MotorControl.h)(0x56F268B9)
-I (..\Include\Button.h)(0x56F268B9)
-F (..\Source\MotorControl.c)(0x56F268C0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\motorcontrol.o --omf_browse .\project\motorcontrol.crf --depend .\project\motorcontrol.d)
-I (..\..\firmware\include.h)(0x56F268C0)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+I (..\..\firmware\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
+F (..\Source\Controller.c)(0x56F80E51)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\controller.o --omf_browse .\project\controller.crf --depend .\project\controller.d)
+I (..\..\firmware\include.h)(0x56F815E1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
 I (..\..\firmware\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
 I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
@@ -585,6 +595,140 @@ I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
 I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
-I (..\..\firmware\define.h)(0x56F268C0)
-I (..\Include\MotorControl.h)(0x56F268B9)
-I (..\Include\Button.h)(0x56F268B9)
+I (..\..\firmware\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
+F (..\Source\Encoder.c)(0x56FA93C7)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\encoder.o --omf_browse .\project\encoder.crf --depend .\project\encoder.d)
+I (..\..\firmware\include.h)(0x56F815E1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+I (..\..\firmware\stm32f4xx.h)(0x56F268C0)
+I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmFunc.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmSimd.h)(0x56F268B5)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x56F26891)
+I (..\..\firmware\stm32f4xx_conf.h)(0x56F268C0)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
+I (..\..\firmware\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
+F (..\Source\Button.c)(0x56F2D613)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\button.o --omf_browse .\project\button.crf --depend .\project\button.d)
+I (..\..\firmware\include.h)(0x56F815E1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+I (..\..\firmware\stm32f4xx.h)(0x56F268C0)
+I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmFunc.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmSimd.h)(0x56F268B5)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x56F26891)
+I (..\..\firmware\stm32f4xx_conf.h)(0x56F268C0)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
+I (..\..\firmware\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)
+F (..\Source\MotorControl.c)(0x56F94609)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\motorcontrol.o --omf_browse .\project\motorcontrol.crf --depend .\project\motorcontrol.d)
+I (..\..\firmware\include.h)(0x56F815E1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DF84A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x569DF84A)
+I (..\..\firmware\stm32f4xx.h)(0x56F268C0)
+I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmInstr.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmFunc.h)(0x56F268B5)
+I (..\CMSIS\Include\core_cmSimd.h)(0x56F268B5)
+I (..\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x56F26891)
+I (..\..\firmware\stm32f4xx_conf.h)(0x56F268C0)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\misc.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x56F268BF)
+I (..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x56F268BF)
+I (..\..\firmware\define.h)(0x56F80E51)
+I (..\Include\MotorControl.h)(0x56F80E51)
+I (..\Include\Button.h)(0x56F80E51)
+I (..\Include\IMU.h)(0x56F945D6)
+I (..\Include\Encoder.h)(0x56FA93C7)

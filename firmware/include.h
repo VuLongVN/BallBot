@@ -6,13 +6,16 @@
 #ifndef __INCLUDE_H_
 #define __INCLUDE_H_
 
-#include <stdint.h>
 #include <stdbool.h>
-#include <math.h>
+#include <stdio.h>
+#include "math.h"
+#include "stdint.h"
 
 #include "stm32f4xx.h"
 #include "define.h"
 #include "MotorControl.h"
 #include "Button.h"
+#include "IMU.h"
+#include "Encoder.h"
 
 #endif /* INCLUDE_H_ */

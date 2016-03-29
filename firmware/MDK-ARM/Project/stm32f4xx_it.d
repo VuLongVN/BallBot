@@ -37,8 +37,11 @@
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\project\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\project\stm32f4xx_it.o: ..\define.h
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: ..\Include\MotorControl.h
 .\project\stm32f4xx_it.o: ..\Include\Button.h
+.\project\stm32f4xx_it.o: ..\Include\IMU.h
+.\project\stm32f4xx_it.o: ..\Include\Encoder.h

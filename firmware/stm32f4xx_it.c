@@ -1,6 +1,14 @@
 #include "stm32f4xx_it.h"
 #include "include.h"
-volatile  count;
+
+
+
+volatile int count;
+extern volatile uint8_t PWM_motorADutyCycle;
+
+
+extern int64_t NumEncoder;
+
 
 void NMI_Handler(void)
 {
@@ -48,6 +56,7 @@ void SysTick_Handler(void)
 
 void EXTI0_IRQHandler(void)
 {
+
 	if(EXTI_GetITStatus(EXTI_Line0) != RESET) // chong rung 
 		if(GPIO_ReadInputDataBit(GPIOA , GPIO_Pin_0)) 
 	{
@@ -55,10 +64,27 @@ void EXTI0_IRQHandler(void)
 		/* Do your stuff when PA0 is changed */
 			GPIO_ToggleBits(GPIOD,GPIO_Pin_12);
 			EXTI->PR = EXTI_Line0;
+
+	if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+		if(GPIO_ReadInputDataBit(GPIOA , GPIO_Pin_0))
+	{
+		count++;
+		/* Do your stuff when PA0 is changed */
+    GPIO_ToggleBits(LEDD_BASE, LEDD_PIN);
+		PWM_motorADutyCycle +=5;
+		if (PWM_motorADutyCycle>= 90)				PWM_motorADutyCycle = 90;
+		/* Clear interrupt flag */
+		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
+
+	}
 	}
 }
 
-void EXTI9_5_IRQHandler(void)
+void TIM3_IRQHandler(void)
 {
-
+  if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
+  {
+     NumEncoder += 0xFFFFFFFF;   
+   TIM_ClearITPendingBit(TIM3, TIM_IT_Update); 
+  }
 }

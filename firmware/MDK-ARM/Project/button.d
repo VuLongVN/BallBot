@@ -1,8 +1,9 @@
 .\project\button.o: ..\Source\Button.c
 .\project\button.o: ..\..\firmware\include.h
-.\project\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\project\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\button.o: ..\..\firmware\stm32f4xx.h
 .\project\button.o: ..\CMSIS\Include\core_cm4.h
 .\project\button.o: ..\CMSIS\Include\core_cmInstr.h
@@ -41,3 +42,5 @@
 .\project\button.o: ..\..\firmware\include.h
 .\project\button.o: ..\Include\MotorControl.h
 .\project\button.o: ..\Include\Button.h
+.\project\button.o: ..\Include\IMU.h
+.\project\button.o: ..\Include\Encoder.h

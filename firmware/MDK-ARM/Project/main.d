@@ -1,8 +1,9 @@
 .\project\main.o: ..\main.c
 .\project\main.o: ..\include.h
-.\project\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\project\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\main.o: ..\stm32f4xx.h
 .\project\main.o: ..\CMSIS\Include\core_cm4.h
 .\project\main.o: ..\CMSIS\Include\core_cmInstr.h
@@ -41,3 +42,5 @@
 .\project\main.o: ..\include.h
 .\project\main.o: ..\Include\MotorControl.h
 .\project\main.o: ..\Include\Button.h
+.\project\main.o: ..\Include\IMU.h
+.\project\main.o: ..\Include\Encoder.h

@@ -1,0 +1,77 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.16a
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Vu Long, HCMUT, LIC=ZB445-G31XM-5T73W-QGY93-EWBZ7-H72RI
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.16a
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 (build 20)
+Assembler:       Armasm.exe V5.06 (build 20)
+Linker/Locator:  ArmLink.exe V5.06 (build 20)
+Library Manager: ArmAr.exe V5.06 (build 20)
+Hex Converter:   FromElf.exe V5.06 (build 20)
+CPU DLL:         SARMCM3.DLL V5.16a
+Dialog DLL:      DCM.DLL V1.13.2.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.17.0
+Dialog DLL:      TCM.DLL V1.14.5.0
+ 
+<h2>Project:</h2>
+D:\Drive\Workspace\SourceTree\BallBot\firmware\MDK-ARM\EXIT.uvprojx
+Project File Date:  03/25/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 (build 20)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'BallBot'
+compiling Encoder.c...
+compiling MotorControl.c...
+..\Source\MotorControl.c(25): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_A_DIR_BASE, 
+OTOR_A_DIR_PIN, moterDir);
+..\Source\MotorControl.c(27): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+EDA_BASE, 
+EDA_PIN, moterDir);
+..\Source\MotorControl.c(35): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_B_DIR_BASE, 
+OTOR_B_DIR_PIN, moterDir);
+..\Source\MotorControl.c(37): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+EDB_BASE, 
+EDB_PIN, moterDir);
+..\Source\MotorControl.c(45): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_C_DIR_BASE, 
+OTOR_C_DIR_PIN, moterDir);
+..\Source\MotorControl.c(47): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+EDC_BASE, 
+EDC_PIN, moterDir);
+..\Source\MotorControl.c(55): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+OTOR_D_DIR_BASE, 
+OTOR_D_DIR_PIN, moterDir);
+..\Source\MotorControl.c(57): warning:  #188-D: enumerated type mixed with another type
+  		GPIO_WriteBit(
+EDD_BASE, 
+EDD_PIN, moterDir);
+..\Source\MotorControl.c: 8 warnings, 0 errors
+linking...
+Program Size: Code=2832 RO-data=424 RW-data=64 ZI-data=1664  
+".\Project\BallBot.axf" - 0 Error(s), 8 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  D:\Drive\Workspace\SourceTree\BallBot\firmware\MDK-ARM\RTE
+  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

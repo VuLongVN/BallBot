@@ -2,13 +2,15 @@
 
 void GPIOConfig(void);
 #define	TESTBUTTON
+volatile uint8_t PWM_motorADutyCycle = 60;
 
 int main(void)
 {
-	SysTick_Config(SystemCoreClock/168);
+	SysTick_Config(SystemCoreClock/1000);
 	GPIOConfig();
 	PWMConfig();
   motorDirConfig();
+	encoderInit();
  
 
 	#ifdef TEST
@@ -20,17 +22,21 @@ int main(void)
 	#ifdef TESTBUTTON
 	initButtonOnDiscoveryBoard();
 	#endif
-	
+	#ifdef TESTMOTOR
+	//GPIO_WriteBit(MOTOR_B_SPEED_BASE, MOTOR_B_SPEED_PIN, Bit_SET);
+	//GPIO_WriteBit(MOTOR_B_DIR_BASE, MOTOR_B_DIR_PIN, Bit_SET);
+	#endif
+
   while (1)
 		{
 			#ifdef TESTMOTOR
-			PWMControl(MOTOR_A, CLOCKWISE, 50);
-			PWMControl(MOTOR_B, CLOCKWISE, 50);
-			PWMControl(MOTOR_C, CLOCKWISE, 50);
-			PWMControl(MOTOR_D, CLOCKWISE, 50);
+			//PWMControl(MOTOR_A, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
+				PWMControl(MOTOR_B, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
+//			PWMControl(MOTOR_C, CLOCKWISE, 50);
+//			PWMControl(MOTOR_D, CLOCKWISE, 50);
 			#endif
 			
-			
+			readEncoder(MOTOR_A);
 		}
 }
 

@@ -23,7 +23,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 	case MOTOR_A:
 	{
 		GPIO_WriteBit(MOTOR_A_DIR_BASE, MOTOR_A_DIR_PIN, moterDir);
-		#ifdef TESTMOTOR
+		#ifdef TESTMOTORA
 		GPIO_WriteBit(LEDA_BASE, LEDA_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
@@ -33,7 +33,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 	case MOTOR_B:
 	{
 		GPIO_WriteBit(MOTOR_B_DIR_BASE, MOTOR_B_DIR_PIN, moterDir);
-		#ifdef TESTMOTOR
+		#ifdef TESTMOTORB
 		GPIO_WriteBit(LEDB_BASE, LEDB_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
@@ -43,7 +43,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 	case MOTOR_C:
 	{
 		GPIO_WriteBit(MOTOR_C_DIR_BASE, MOTOR_C_DIR_PIN, moterDir);
-		#ifdef TESTMOTOR
+		#ifdef TESTMOTORC
 		GPIO_WriteBit(LEDC_BASE, LEDC_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */
@@ -53,7 +53,7 @@ void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
 	case MOTOR_D:
 	{
 		GPIO_WriteBit(MOTOR_D_DIR_BASE, MOTOR_D_DIR_PIN, moterDir);
-		#ifdef TESTMOTOR
+		#ifdef TESTMOTORD
 		GPIO_WriteBit(LEDD_BASE, LEDD_PIN, moterDir);
 		#endif
 		/* pulse_length = ((TIM_Period + 1) * DutyCycle) / 100 – 1 */

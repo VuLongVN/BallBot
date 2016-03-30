@@ -17,6 +17,7 @@
 ".\project\imu.o"
 ".\project\controller.o"
 ".\project\encoder.o"
+".\project\uart.o"
 ".\project\button.o"
 ".\project\motorcontrol.o"
 --strict --scatter ".\Project\BallBot_V1.sct"

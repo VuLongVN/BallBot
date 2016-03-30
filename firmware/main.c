@@ -3,11 +3,13 @@
 void GPIOConfig(void);
 #define	TESTBUTTON
 volatile uint8_t PWM_motorADutyCycle = 60;
+ float a = 0;
 
 int main(void)
 {
 	SysTick_Config(SystemCoreClock/1000);
 	GPIOConfig();
+	USART_Configuration(19200);	
 	PWMConfig();
   motorDirConfig();
 	encoderInit();
@@ -35,8 +37,9 @@ int main(void)
 //			PWMControl(MOTOR_C, CLOCKWISE, 50);
 //			PWMControl(MOTOR_D, CLOCKWISE, 50);
 			#endif
-			
-			readEncoder(MOTOR_A);
+			scanf("%f",&a);
+			printf("%3.5f\r",a);
+			//readEncoder(MOTOR_A);
 		}
 }
 

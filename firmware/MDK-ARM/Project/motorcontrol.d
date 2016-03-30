@@ -44,3 +44,4 @@
 .\project\motorcontrol.o: ..\Include\Button.h
 .\project\motorcontrol.o: ..\Include\IMU.h
 .\project\motorcontrol.o: ..\Include\Encoder.h
+.\project\motorcontrol.o: ..\Include\UART.h

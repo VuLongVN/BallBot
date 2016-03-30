@@ -480,6 +480,11 @@
               <FileType>1</FileType>
               <FilePath>..\Source\Encoder.c</FilePath>
             </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

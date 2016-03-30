@@ -45,3 +45,4 @@
 .\project\stm32f4xx_it.o: ..\Include\Button.h
 .\project\stm32f4xx_it.o: ..\Include\IMU.h
 .\project\stm32f4xx_it.o: ..\Include\Encoder.h
+.\project\stm32f4xx_it.o: ..\Include\UART.h

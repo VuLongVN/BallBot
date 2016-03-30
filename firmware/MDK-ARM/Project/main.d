@@ -44,3 +44,4 @@
 .\project\main.o: ..\Include\Button.h
 .\project\main.o: ..\Include\IMU.h
 .\project\main.o: ..\Include\Encoder.h
+.\project\main.o: ..\Include\UART.h

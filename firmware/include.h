@@ -17,5 +17,6 @@
 #include "Button.h"
 #include "IMU.h"
 #include "Encoder.h"
+#include "UART.h"
 
 #endif /* INCLUDE_H_ */

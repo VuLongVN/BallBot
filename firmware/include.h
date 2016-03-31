@@ -18,5 +18,7 @@
 #include "Encoder.h"
 #include "PID.h"
 #include "Controller.h"	
+#include "Feedback.h"	
+
 
 #endif /* INCLUDE_H_ */

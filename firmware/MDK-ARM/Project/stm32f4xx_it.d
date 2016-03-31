@@ -46,3 +46,4 @@
 .\project\stm32f4xx_it.o: ..\Include\Encoder.h
 .\project\stm32f4xx_it.o: ..\Include\PID.h
 .\project\stm32f4xx_it.o: ..\Include\Controller.h
+.\project\stm32f4xx_it.o: ..\Include\Feedback.h

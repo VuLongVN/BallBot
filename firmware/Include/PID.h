@@ -7,8 +7,8 @@
 
 #include "include.h"
 
-#ifndef __PID_H_
-#define __PID_H_
+#ifndef __PID_H
+#define __PID_H
 
 
 extern PID_PARAMETERS globalPID_parametersMotorA;
@@ -44,12 +44,24 @@ extern PID_PARAMETERS PIDgetParameters(int8_t localMotor);
  */
 extern void PIDprocess(PID_PARAMETERS localPID_Parameters, int8_t localMotor);
 
-/* Control signal. Take it to 
+/* Control signal.
+ * @input: localMotor.
+ * @output: float u(t).
+ * @process: return control signal (u).
+ */
+extern float PIDcontrolSignal(PID_PARAMETERS localPID_Parameters, int8_t localMotor);
+
+/* Reset PID parameters. 
+ * @input: localMotor.
+ * @output: None.
+ * @process: Reset all PID parameters of localMotor.
+ */
+extern void PIDresetParameters(int8_t localMotor);
+
+/* Get error (e(t) = u(t) - y(t)) 
  * @input: localMotor.
  * @output: None.
  * @process: update control signal (u).
  */
-extern float PIDcontrolSignal(PID_PARAMETERS localPID_Parameters, int8_t localMotor);
-extern void PIDresetParameters(int8_t localMotor);
 extern float PIDgetError(int8_t localMotor);
 #endif /* WALLFOLLOW_PID_H_ */

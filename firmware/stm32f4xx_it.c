@@ -1,7 +1,9 @@
 #include "stm32f4xx_it.h"
 #include "include.h"
+
 volatile int count;
 extern volatile uint8_t PWM_motorADutyCycle;
+extern volatile uint8_t PWM_motorBDutyCycle;
 
 void NMI_Handler(void)
 {
@@ -57,6 +59,8 @@ void EXTI0_IRQHandler(void)
     GPIO_ToggleBits(LEDD_BASE, LEDD_PIN);
 		PWM_motorADutyCycle +=5;
 		if (PWM_motorADutyCycle>= 90)				PWM_motorADutyCycle = 90;
+		PWM_motorBDutyCycle +=5;
+		if (PWM_motorBDutyCycle>= 90)				PWM_motorBDutyCycle = 90;
 		/* Clear interrupt flag */
 		EXTI_ClearITPendingBit(PA0_EXTI_LINE);
 	}

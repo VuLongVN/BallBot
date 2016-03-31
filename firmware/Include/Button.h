@@ -10,7 +10,7 @@
 
 #include "include.h"
 
-#define PA0_EXTI_LINE 									(EXTI_Line0)
+#define PA0_EXTI_LINE 										(EXTI_Line0)
 #define PA0_EXTI_PIN										(GPIO_Pin_0)
 #define PA0_EXTI_BASE										(GPIOB)
 

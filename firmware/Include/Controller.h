@@ -4,15 +4,18 @@
  * @authors VuLong DuyKhanh
  */
  
+ 
+#ifndef __CONTROLLER_H
+#define __CONTROLLER_H
+
 #include "include.h"
  
-#define PI 							(3.141593)
-#define g								(9.81)
 
-#define RADIUS_BALL 		(BALLSIZE_3)					// mm
-#define BALLSIZE_1 			()										// mm
+
+#define RADIUS_BALL 		(BALLSIZE_1)					// mm
+#define BALLSIZE_1 			(120)										// mm
 #define BALLSIZE_2 			()										// mm
-#define BALLSIZE_3 			(120)										// mm
+#define BALLSIZE_3 			()										// mm
 #define BALLSIZE_4 			()										// mm
 #define BALLSIZE_5 			()										// mm
 
@@ -35,4 +38,4 @@ extern float globalTheta[3];
 extern float globalthetaDot[3];
 
 
-
+#endif

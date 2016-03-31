@@ -45,3 +45,4 @@
 .\project\controller.o: ..\Include\Encoder.h
 .\project\controller.o: ..\Include\PID.h
 .\project\controller.o: ..\Include\Controller.h
+.\project\controller.o: ..\Include\Feedback.h

@@ -45,3 +45,4 @@
 .\project\motorcontrol.o: ..\Include\Encoder.h
 .\project\motorcontrol.o: ..\Include\PID.h
 .\project\motorcontrol.o: ..\Include\Controller.h
+.\project\motorcontrol.o: ..\Include\Feedback.h

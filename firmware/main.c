@@ -2,6 +2,7 @@
 
 void GPIOConfig(void);
 volatile uint8_t PWM_motorADutyCycle = 30;
+volatile uint8_t PWM_motorBDutyCycle = 30;
 
 int main(void)
 {
@@ -26,8 +27,8 @@ int main(void)
   while (1)
 		{
 			#ifdef TESTMOTOR
-			//PWMControl(MOTOR_A, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
-				PWMControl(MOTOR_B, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
+				PWMControl(MOTOR_A, CLOCKWISE, PWM_motorADutyCycle);
+				PWMControl(MOTOR_B, COUNTER_CLOCKWISE, PWM_motorBDutyCycle);
 //			PWMControl(MOTOR_C, CLOCKWISE, 50);
 //			PWMControl(MOTOR_D, CLOCKWISE, 50);
 				

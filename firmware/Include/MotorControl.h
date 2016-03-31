@@ -87,8 +87,9 @@ extern void PWMConfig(void);
   * @param 		motorSpeed : DutyCycle of PWM Pulse (max = 100)
   * @retval 	None
   */
-extern void PWMControl(int motorJ  ,int  moterDir , int motorSpeed);
+extern void PWMControl(int motorJ, int  moterDir, int motorSpeed);
 extern void motorDirConfig(void);
 extern void controlSignal2MotorParameter(float localControlSignal,  int8_t localMotor);
+extern int8_t omega2PWMDutyCycles(float localOmega);
 
 #endif /* __MOTOR_CONTROL_H*/

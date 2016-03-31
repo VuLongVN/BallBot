@@ -16,11 +16,12 @@ MOTOR_PARAMETERS			MOTORC_Parameters;
 MOTOR_PARAMETERS			MOTORD_Parameters;
 
 void PWMConfig(void);
-void PWMControl(int motorJ  ,int  moterDir , int motorSpeed);
+void PWMControl(int motorJ, int  moterDir, int motorSpeed);
 void motorDirConfig(void);
 void controlSignal2MotorParameter(float localControlSignal,  int8_t localMotor);
+int8_t omega2PWMDutyCycles(float localOmega);
 
-void PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
+void PWMControl(int motorJ, int  moterDir, int motorSpeed)
 {
 	switch(motorJ)
 	{
@@ -101,7 +102,7 @@ void PWMConfig(void)
 	GPIO_PinAFConfig(MOTOR_A_SPEED_BASE, MOTOR_A_AF_PIN, GPIO_AF_TIM2);  // Motor_A_PB8
 	GPIO_PinAFConfig(MOTOR_B_SPEED_BASE, MOTOR_B_AF_PIN, GPIO_AF_TIM2);  // Motor_B_PA2
 	GPIO_PinAFConfig(MOTOR_C_SPEED_BASE, MOTOR_C_AF_PIN, GPIO_AF_TIM4);  // Motor_C_PA3
-	GPIO_PinAFConfig(MOTOR_D_SPEED_BASE, MOTOR_D_AF_PIN, GPIO_AF_TIM9); // Motor_D_PE6
+	GPIO_PinAFConfig(MOTOR_D_SPEED_BASE, MOTOR_D_AF_PIN, GPIO_AF_TIM9);  // Motor_D_PE6
 
 
 	/* Time base configuration - Create 1KHz PWM Pulse  */
@@ -198,5 +199,9 @@ void controlSignal2MotorParameter(float localControlSignal,  int8_t localMotor)
 		break;
 	}
 	}
-	
+}
+
+int8_t omega2PWMDutyCycles(float localOmega)
+{
+	return 0;
 }

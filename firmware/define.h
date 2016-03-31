@@ -10,19 +10,31 @@
 
 #include "include.h"
 
-#define ON	1
-#define OFF	0
+#define ON							(1)
+#define OFF							(0)
+#define PI 							(3.141593f)
+#define g							(9.81f)
 #define TESTMOTOR
 #define TESTBUTTON
 
-#define SAMPLE_TIME_IMU 			(100)  	// us
-#define SAMPLE_TIME_ENCODER			(100)	// us
+#define SAMPLE_TIME_IMU 			(5000)  	// us
+#define SAMPLE_TIME_ENCODER			(20000)		// us
+#define SAMPLE_TIME_PID				(1000)		// us
+#define PERIOD_TIME_PID				(200000)	// us	
+#define PERIOD_TIME_LQR				(200000)	// us
+
+ 
 
 // TIM_Period = (Timer_tick_frequence/PWM_frequence )-1 =
 // = (1000000/1000)-1 = 999
 #define TIM_PERIOD 					(999)
 
-#define MAX_CONTROL_SIGNAL			(float)(100)	// rad/s
+#define MAX_CONTROL_SIGNAL			(100.0f)	// rad/s
+
+
+#define ENCODER_PULSES 				(20)
+#define OMEGA_J						(2*PI/ENCODER_PULSES)
+
 typedef enum
 {
 	MOTOR_A = 0,
@@ -42,6 +54,7 @@ typedef struct
 {
 	int Dir;
 	int Speed;
+
 } MOTOR_PARAMETERS;
 
 typedef struct
@@ -64,7 +77,6 @@ typedef struct
 	float e;
 	float e_;
 	float e__;
-	float Ts;
 } PID_PARAMETERS;
 
 #endif /* __DEFINE_H_ */

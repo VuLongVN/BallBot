@@ -682,14 +682,19 @@
               <FilePath>..\Source\Controller.c</FilePath>
             </File>
             <File>
+              <FileName>PID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\PID.c</FilePath>
+            </File>
+            <File>
               <FileName>Encoder.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Source\Encoder.c</FilePath>
             </File>
             <File>
-              <FileName>PID.c</FileName>
+              <FileName>Feedback.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Source\PID.c</FilePath>
+              <FilePath>..\Source\Feedback.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -717,14 +722,24 @@
               <FilePath>..\Include\IMU.h</FilePath>
             </File>
             <File>
+              <FileName>Controller.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\Controller.h</FilePath>
+            </File>
+            <File>
               <FileName>Encoder.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Include\Encoder.h</FilePath>
             </File>
             <File>
-              <FileName>Controller.h</FileName>
+              <FileName>Feedback.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Include\Controller.h</FilePath>
+              <FilePath>..\Include\Feedback.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Include\UART.h</FilePath>
             </File>
           </Files>
         </Group>

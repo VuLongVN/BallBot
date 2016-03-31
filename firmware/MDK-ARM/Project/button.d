@@ -45,3 +45,4 @@
 .\project\button.o: ..\Include\Encoder.h
 .\project\button.o: ..\Include\PID.h
 .\project\button.o: ..\Include\Controller.h
+.\project\button.o: ..\Include\Feedback.h

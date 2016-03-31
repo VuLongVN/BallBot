@@ -6,6 +6,11 @@
 
 #include "include.h"
 
+PID_PARAMETERS globalPID_parametersMotorA;
+PID_PARAMETERS globalPID_parametersMotorB;
+PID_PARAMETERS globalPID_parametersMotorC;
+PID_PARAMETERS globalPID_parametersMotorD;
+
 void PIDsetParameters(PID_PARAMETERS localPID_Parameters, int8_t localMotor);
 void PIDsetKParameters(PID_PARAMETERS localPIDParameters, float localKp, float localKi, float localKd);
 PID_PARAMETERS PIDgetParameters(int8_t localMotor);
@@ -14,10 +19,6 @@ float PIDcontrolSignal(PID_PARAMETERS localPID_Parameters, int8_t localMotor);
 void PIDresetParameters(int8_t localMotor);
 float PIDgetError(int8_t localMotor);
 
-PID_PARAMETERS globalPID_parametersMotorA;
-PID_PARAMETERS globalPID_parametersMotorB;
-PID_PARAMETERS globalPID_parametersMotorC;
-PID_PARAMETERS globalPID_parametersMotorD;
 
 /*Set the parameters for each motor
  * @input: localParameters, Motor
@@ -100,8 +101,8 @@ void PIDprocess(PID_PARAMETERS localPIDParameters, int8_t localMotor)
 	localPIDParameters.u_ = localPIDParameters.u;
 	localPIDParameters.u = localPIDParameters.u_ +\
 													localPIDParameters.Kp*(localPIDParameters.e - localPIDParameters.e_) + \
-													localPIDParameters.Ki*localPIDParameters.Ts*localPIDParameters.e + \
-													(localPIDParameters.Kd/localPIDParameters.Ts)*(localPIDParameters.e - 2*localPIDParameters.e_ + localPIDParameters.e__);
+													localPIDParameters.Ki*SAMPLE_TIME_PID*localPIDParameters.e + \
+													(localPIDParameters.Kd/SAMPLE_TIME_PID)*(localPIDParameters.e - 2*localPIDParameters.e_ + localPIDParameters.e__);
 	if (localPIDParameters.u > MAX_CONTROL_SIGNAL)
 	{
 		localPIDParameters.u = MAX_CONTROL_SIGNAL;

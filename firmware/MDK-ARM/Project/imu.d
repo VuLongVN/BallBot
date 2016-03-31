@@ -45,3 +45,4 @@
 .\project\imu.o: ..\Include\Encoder.h
 .\project\imu.o: ..\Include\PID.h
 .\project\imu.o: ..\Include\Controller.h
+.\project\imu.o: ..\Include\Feedback.h

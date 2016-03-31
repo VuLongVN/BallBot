@@ -7,13 +7,14 @@ volatile uint8_t PWM_motorADutyCycle = 60;
 
 int main(void)
 {
-//SysTick_Config(SystemCoreClock/1000);
-//	GPIOConfig();
-	USART_Configuration(38400);	
-	printf(" Test\r");
-	//PWMConfig();
- // motorDirConfig();
-	//encoderInit();
+
+	SysTick_Config(SystemCoreClock/1000);
+	GPIOConfig();
+//	USART_Configuration(38400);	
+//	printf(" Test\r");
+	PWMConfig();
+  motorDirConfig();
+	encoderInit();
  
 
 	#ifdef TEST
@@ -33,13 +34,13 @@ int main(void)
   while (1)
 		{
 			#ifdef TESTMOTOR
-			//PWMControl(MOTOR_A, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
+				PWMControl(MOTOR_A, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
 				PWMControl(MOTOR_B, COUNTER_CLOCKWISE, PWM_motorADutyCycle);
-//			PWMControl(MOTOR_C, CLOCKWISE, 50);
-//			PWMControl(MOTOR_D, CLOCKWISE, 50);
+				PWMControl(MOTOR_C, CLOCKWISE, 50);
+				PWMControl(MOTOR_D, CLOCKWISE, 50);
 			#endif
 			
-			//readEncoder(MOTOR_A);
+			readEncoder(MOTOR_A);
 		}
 }
 

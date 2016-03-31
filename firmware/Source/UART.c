@@ -1,7 +1,6 @@
 #include "include.h"
 
-USART_InitTypeDef USART_InitStructure;
-GPIO_InitTypeDef GPIO_InitStructure;
+
 
 void USART_Configuration(unsigned int BaudRate);
 void SendUSART(USART_TypeDef* USARTx,uint16_t ch);
@@ -29,23 +28,23 @@ void Delay(__IO uint32_t nCount)
 
 void USART_Configuration(unsigned int BaudRate)
 {
+	USART_InitTypeDef USART_InitStructure;
+	GPIO_InitTypeDef USART_GPIO_InitStructure;
 	
   RCC_APB2PeriphClockCmd(UART_UART_CLK, ENABLE); 
   RCC_AHB1PeriphClockCmd(UART_GPIO_CLK, ENABLE);
   
  /*  Configure USART  as alternate function  */
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+  USART_GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  USART_GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+  USART_GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	USART_GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	
-  GPIO_InitStructure.GPIO_Pin = UART_PIN_TX | UART_PIN_RX;
-  GPIO_Init(UART_PORT, &GPIO_InitStructure);
+  USART_GPIO_InitStructure.GPIO_Pin = UART_PIN_TX | UART_PIN_RX;
+  GPIO_Init(UART_PORT, &USART_GPIO_InitStructure);
 
 	GPIO_PinAFConfig(UART_PORT,UART_SOURCE_TX,UART_AF); 
   GPIO_PinAFConfig(UART_PORT,UART_SOURCE_RX,UART_AF); 
-
-
   
   USART_InitStructure.USART_BaudRate = BaudRate;
   USART_InitStructure.USART_WordLength = USART_WordLength_8b;

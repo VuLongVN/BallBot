@@ -483,7 +483,7 @@
             <File>
               <FileName>UART.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\UART.c</FilePath>
+              <FilePath>..\Source\UART.c</FilePath>
             </File>
           </Files>
         </Group>

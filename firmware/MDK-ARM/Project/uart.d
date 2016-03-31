@@ -1,4 +1,4 @@
-.\project\uart.o: UART.c
+.\project\uart.o: ..\Source\UART.c
 .\project\uart.o: ..\..\firmware\include.h
 .\project\uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\project\uart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

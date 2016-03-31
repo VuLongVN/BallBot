@@ -12,15 +12,23 @@ float arc[3];
 float omega[3];
 
 float phi[3];
+float	velocity[3];
 
-int16_t	velocity[3];
 int32_t coordinate[3];
+
 volatile int64_t CountEncoderA;
 volatile int64_t CountEncoderB;
 volatile int64_t CountEncoderC;
 volatile int64_t CountEncoderD;
 
+volatile int64_t OldCountEncoderA;
+volatile int64_t OldCountEncoderB;
+volatile int64_t OldCountEncoderC;
+volatile int64_t OldCountEncoderD;
+
+uint16_t counterEncoderPulse[3];
 int64_t NumEncoder = 0;
+uint16_t encoderResolution = 20;
 
 void encoderInit(void);
 void encoder2PhiOfBall(float localArc[3], float localPhi[3]);
@@ -41,10 +49,14 @@ void encoderInit()
 	RCC_APB1PeriphClockCmd(EncoderC_TIMER_CLK, ENABLE);
 	RCC_APB1PeriphClockCmd(EncoderD_TIMER_CLK, ENABLE);
 	
-  RCC_AHB1PeriphClockCmd(EncoderA_GPIO_CLK, ENABLE); 
-	RCC_AHB1PeriphClockCmd(EncoderB_GPIO_CLK, ENABLE); 
-	RCC_AHB1PeriphClockCmd(EncoderC_GPIO_CLK, ENABLE); 
-	RCC_AHB1PeriphClockCmd(EncoderD_GPIO_CLK, ENABLE); 
+  RCC_AHB1PeriphClockCmd(EncoderA_CH1_GPIO_CLK, ENABLE); 
+	RCC_AHB1PeriphClockCmd(EncoderA_CH2_GPIO_CLK, ENABLE); 
+  RCC_AHB1PeriphClockCmd(EncoderB_CH1_GPIO_CLK, ENABLE); 
+	RCC_AHB1PeriphClockCmd(EncoderB_CH2_GPIO_CLK, ENABLE);
+  RCC_AHB1PeriphClockCmd(EncoderC_CH1_GPIO_CLK, ENABLE); 
+	RCC_AHB1PeriphClockCmd(EncoderC_CH2_GPIO_CLK, ENABLE);	
+  RCC_AHB1PeriphClockCmd(EncoderD_CH1_GPIO_CLK, ENABLE); 
+	RCC_AHB1PeriphClockCmd(EncoderD_CH2_GPIO_CLK, ENABLE);
   
   Encoder_GPIOInitStructure.GPIO_Mode = GPIO_Mode_AF;
   Encoder_GPIOInitStructure.GPIO_Speed = GPIO_Speed_100MHz;
@@ -52,17 +64,26 @@ void encoderInit()
   Encoder_GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_UP ;
   GPIO_Init(GPIOB, &Encoder_GPIOInitStructure); 
   
-	Encoder_GPIOInitStructure.GPIO_Pin = EncoderA_PIN ;
-  GPIO_PinAFConfig(EncoderA_GPIO_PORT, EncoderA_SOURCE, EncoderA_AF); // TIMER 1
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderA_CH1_PIN ;
+  GPIO_PinAFConfig(EncoderA_CH1_GPIO_PORT, EncoderA_CH1_SOURCE, EncoderA_CH1_AF);
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderA_CH2_PIN ;
+  GPIO_PinAFConfig(EncoderA_CH2_GPIO_PORT, EncoderA_CH2_SOURCE, EncoderA_CH2_AF);
 	
-	Encoder_GPIOInitStructure.GPIO_Pin = EncoderB_PIN ;	
-	GPIO_PinAFConfig(EncoderB_GPIO_PORT, EncoderB_SOURCE, EncoderB_AF); 
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderB_CH1_PIN ;
+  GPIO_PinAFConfig(EncoderB_CH1_GPIO_PORT, EncoderB_CH1_SOURCE, EncoderB_CH1_AF);
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderB_CH2_PIN ;
+  GPIO_PinAFConfig(EncoderB_CH2_GPIO_PORT, EncoderB_CH2_SOURCE, EncoderB_CH2_AF);
 	
-	Encoder_GPIOInitStructure.GPIO_Pin = EncoderC_PIN ;
-  GPIO_PinAFConfig(EncoderC_GPIO_PORT, EncoderC_SOURCE, EncoderC_AF); 
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderC_CH1_PIN ;
+  GPIO_PinAFConfig(EncoderC_CH1_GPIO_PORT, EncoderC_CH1_SOURCE, EncoderC_CH1_AF);
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderB_CH2_PIN ;
+  GPIO_PinAFConfig(EncoderC_CH2_GPIO_PORT, EncoderC_CH2_SOURCE, EncoderC_CH2_AF);
+
 	
-	Encoder_GPIOInitStructure.GPIO_Pin = EncoderD_PIN ;
-	GPIO_PinAFConfig(EncoderD_GPIO_PORT, EncoderD_SOURCE, EncoderD_AF); 
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderD_CH1_PIN ;
+  GPIO_PinAFConfig(EncoderD_CH1_GPIO_PORT, EncoderD_CH1_SOURCE, EncoderD_CH1_AF);
+	Encoder_GPIOInitStructure.GPIO_Pin = EncoderD_CH2_PIN ;
+  GPIO_PinAFConfig(EncoderD_CH2_GPIO_PORT, EncoderD_CH2_SOURCE, EncoderD_CH2_AF);
 	
 	
   /* Time base configuration */
@@ -136,26 +157,39 @@ void readEncoder(int MOTOR)
 	{
 		case MOTOR_A:
 		{
-		CountEncoderA = 65535 - ( TIM_GetCounter(EncoderA_TIMER)) ; 
+		velocity[0] = (float)counterEncoderPulse[0] /(encoderResolution * 0.2 ) ; // 0.2 = Sample Time 
+		CountEncoderA = ( TIM_GetCounter(EncoderA_TIMER)) ; 
 			break;
 		}
 		case MOTOR_B:
 		{
-		CountEncoderA = 65535 - ( TIM_GetCounter(EncoderB_TIMER)) ; 
+		velocity[1] = counterEncoderPulse[1] /( encoderResolution * 0.2) ;
+		CountEncoderA =  ( TIM_GetCounter(EncoderB_TIMER)) ; 
 			break;
 		}
 		case MOTOR_C:
 		{
-		CountEncoderC = 65535 - ( TIM_GetCounter(EncoderC_TIMER)) ; 
+		velocity[2] = counterEncoderPulse[2] /( encoderResolution * 0.2) ;			
+		CountEncoderC = ( TIM_GetCounter(EncoderC_TIMER)) ; 
 			break;
 		}
 		case MOTOR_D:
-		{
-		CountEncoderD = 65535 - ( TIM_GetCounter(EncoderD_TIMER)) ; 
+		{		
+		CountEncoderD =  ( TIM_GetCounter(EncoderD_TIMER)) ; 
 			break;
 		}
 	}
 }
 
+void encoderInterrupt()
+{
+	counterEncoderPulse[0] = abs( TIM_GetCounter(EncoderA_TIMER) - OldCountEncoderA ) ;
+	counterEncoderPulse[1] = abs( TIM_GetCounter(EncoderB_TIMER) - OldCountEncoderB )  ;
+	counterEncoderPulse[2] = abs( TIM_GetCounter(EncoderC_TIMER) - OldCountEncoderC ) ;
+	OldCountEncoderA = TIM_GetCounter(EncoderA_TIMER);
+	OldCountEncoderB = TIM_GetCounter(EncoderB_TIMER);
+	OldCountEncoderC = TIM_GetCounter(EncoderC_TIMER);
+}
 
-	
+
+

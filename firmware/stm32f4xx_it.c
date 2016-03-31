@@ -2,7 +2,7 @@
 #include "include.h"
 
 
-
+static uint32_t time=0;
 volatile int count;
 extern volatile uint8_t PWM_motorADutyCycle;
 
@@ -52,7 +52,13 @@ void PendSV_Handler(void)
 {}
 
 void SysTick_Handler(void)
-{}
+{
+    if(++time> 500)
+    {
+     time =0;
+		encoderInterrupt();
+    }
+}
 
 void EXTI0_IRQHandler(void)
 {

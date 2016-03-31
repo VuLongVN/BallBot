@@ -1,5 +1,5 @@
 Dependencies for Project 'BallBot_V1', Target 'BallBot_V1': (DO NOT MODIFY !)
-F (..\main.c)(0x56FCEBA1)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\main.o --omf_browse .\project\main.crf --depend .\project\main.d)
+F (..\main.c)(0x56FD3AB1)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\main.o --omf_browse .\project\main.crf --depend .\project\main.d)
 I (..\include.h)(0x56FBFEAB)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
@@ -43,9 +43,9 @@ I (..\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
-F (..\stm32f4xx_it.c)(0x56FBFA8B)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\stm32f4xx_it.o --omf_browse .\project\stm32f4xx_it.crf --depend .\project\stm32f4xx_it.d)
+F (..\stm32f4xx_it.c)(0x56FD44AC)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\stm32f4xx_it.o --omf_browse .\project\stm32f4xx_it.crf --depend .\project\stm32f4xx_it.d)
 I (..\stm32f4xx_it.h)(0x56F268C0)
 I (..\stm32f4xx.h)(0x56F268C0)
 I (..\CMSIS\Include\core_cm4.h)(0x56F268B5)
@@ -90,7 +90,7 @@ I (..\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
 F (..\system_stm32f4xx.c)(0x56F268C0)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\system_stm32f4xx.o --omf_browse .\project\system_stm32f4xx.crf --depend .\project\system_stm32f4xx.d)
 I (..\stm32f4xx.h)(0x56F268C0)
@@ -557,7 +557,7 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
 F (..\Source\Controller.c)(0x56F80E51)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\controller.o --omf_browse .\project\controller.crf --depend .\project\controller.d)
 I (..\..\firmware\include.h)(0x56FBFEAB)
@@ -602,9 +602,9 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
-F (..\Source\Encoder.c)(0x56FBFA8B)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\encoder.o --omf_browse .\project\encoder.crf --depend .\project\encoder.d)
+F (..\Source\Encoder.c)(0x56FD560D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\encoder.o --omf_browse .\project\encoder.crf --depend .\project\encoder.d)
 I (..\..\firmware\include.h)(0x56FBFEAB)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
@@ -647,9 +647,9 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
-F (.\UART.c)(0x56FCEB8D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\uart.o --omf_browse .\project\uart.crf --depend .\project\uart.d)
+F (..\Source\UART.c)(0x56FD441A)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\uart.o --omf_browse .\project\uart.crf --depend .\project\uart.d)
 I (..\..\firmware\include.h)(0x56FBFEAB)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DF84A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x569DF84A)
@@ -692,7 +692,7 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
 F (..\Source\Button.c)(0x56F2D613)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\button.o --omf_browse .\project\button.crf --depend .\project\button.d)
 I (..\..\firmware\include.h)(0x56FBFEAB)
@@ -737,7 +737,7 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)
 F (..\Source\MotorControl.c)(0x56F94609)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\firmware -I ..\Include -I ..\STM32F4xx_StdPeriph_Driver\inc -I ..\CMSIS\Include -I ..\CMSIS\Device\ST\STM32F4xx\Include-I E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="518" -DSTM32F407xx -DSTM32F4XX -DUSE_STDPERIPH_DRIVER-o .\project\motorcontrol.o --omf_browse .\project\motorcontrol.crf --depend .\project\motorcontrol.d)
 I (..\..\firmware\include.h)(0x56FBFEAB)
@@ -782,5 +782,5 @@ I (..\..\firmware\define.h)(0x56F80E51)
 I (..\Include\MotorControl.h)(0x56F80E51)
 I (..\Include\Button.h)(0x56F80E51)
 I (..\Include\IMU.h)(0x56F945D6)
-I (..\Include\Encoder.h)(0x56FA93C7)
+I (..\Include\Encoder.h)(0x56FD55F8)
 I (..\Include\UART.h)(0x56FCE7A2)

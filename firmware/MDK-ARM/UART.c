@@ -29,22 +29,23 @@ void Delay(__IO uint32_t nCount)
 
 void USART_Configuration(unsigned int BaudRate)
 {
+	
   RCC_APB2PeriphClockCmd(UART_UART_CLK, ENABLE); 
   RCC_AHB1PeriphClockCmd(UART_GPIO_CLK, ENABLE);
   
-  /* Configure USART Tx as alternate function  */
+ /*  Configure USART  as alternate function  */
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	
-  GPIO_InitStructure.GPIO_Pin = UART_PIN_TX;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+  GPIO_InitStructure.GPIO_Pin = UART_PIN_TX | UART_PIN_RX;
   GPIO_Init(UART_PORT, &GPIO_InitStructure);
 
-  /* Configure USART Rx as alternate function  */
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
-  GPIO_InitStructure.GPIO_Pin = UART_PIN_RX;
-  GPIO_Init(UART_PORT, &GPIO_InitStructure);
+	GPIO_PinAFConfig(UART_PORT,UART_SOURCE_TX,UART_AF); 
+  GPIO_PinAFConfig(UART_PORT,UART_SOURCE_RX,UART_AF); 
+
+
   
   USART_InitStructure.USART_BaudRate = BaudRate;
   USART_InitStructure.USART_WordLength = USART_WordLength_8b;
@@ -52,12 +53,10 @@ void USART_Configuration(unsigned int BaudRate)
   USART_InitStructure.USART_Parity = USART_Parity_No;
   USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
   USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-  USART_Init(USART1, &USART_InitStructure);
+  USART_Init(UART_CHANNEL, &USART_InitStructure);
   
-  GPIO_PinAFConfig(UART_PORT,UART_SOURCE_TX,UART_AF); 
-  GPIO_PinAFConfig(UART_PORT,UART_SOURCE_RX,UART_AF); 
-  
-  USART_Cmd(USART1, ENABLE);  
+  USART_Cmd(UART_CHANNEL, ENABLE); 
+	
 }
 
 

@@ -18,8 +18,8 @@ extern float phi[3];
 extern int16_t velocity[3];
 extern int32_t coordinate[3];
 
-extern uint32_t periodEncoderPulse[3];
-extern uint32_t counterEncoderPulse[3];
+extern volatile uint64_t periodEncoderPulse[4];
+extern volatile uint64_t counterEncoderPulse[4];
 
 extern void feedbackEncoderProcess(void);
 extern void feedbackIMUProcess(void);

@@ -7,13 +7,11 @@
 
 #include "include.h"
 
-uint32_t periodEncoderPulse[3];
-uint32_t counterEncoderPulse[3];
+volatile uint64_t periodEncoderPulse[4];
+volatile uint64_t counterEncoderPulse[4];
+volatile uint64_t previousCounterEncoderPulse[4];
 
-volatile int64_t CountEncoderA;
-volatile int64_t CountEncoderB;
-volatile int64_t CountEncoderC;
-volatile int64_t CountEncoderD;
+extern volatile bool enableEncoderInterrupt;
 
 int64_t NumEncoder = 0;
 
@@ -97,13 +95,13 @@ void encoderInit()
 	TIM_EncoderInterfaceConfig(EncoderD_TIMER, EncoderD_MODE, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);
 	TIM_TimeBaseInit(EncoderD_TIMER, &Encoder_TimeBaseStructure);
 
-  
+
 	Encoder_TIM_ICInitStructure.TIM_Channel=TIM_Channel_1|TIM_Channel_2;
 	Encoder_TIM_ICInitStructure.TIM_ICPolarity=TIM_ICPolarity_Falling;
 	Encoder_TIM_ICInitStructure.TIM_ICFilter= 0xF;
 	Encoder_TIM_ICInitStructure.TIM_ICSelection=TIM_ICSelection_DirectTI;
 	TIM_ICInit(TIM3, &Encoder_TIM_ICInitStructure);
-	
+
 	/*
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
 	Encoder_NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
@@ -112,25 +110,26 @@ void encoderInit()
 	Encoder_NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&Encoder_NVIC_InitStructure);  
 	*/
- 
-  	TIM_ITConfig(EncoderA_TIMER, TIM_IT_Update, ENABLE);
+
+	TIM_ITConfig(EncoderA_TIMER, TIM_IT_Update, ENABLE);
 	TIM_ITConfig(EncoderB_TIMER, TIM_IT_Update, ENABLE);
 	TIM_ITConfig(EncoderC_TIMER, TIM_IT_Update, ENABLE);
 	TIM_ITConfig(EncoderD_TIMER, TIM_IT_Update, ENABLE);
-  	TIM_Cmd(EncoderA_TIMER, ENABLE);
+	TIM_Cmd(EncoderA_TIMER, ENABLE);
 	TIM_Cmd(EncoderB_TIMER, ENABLE);
 	TIM_Cmd(EncoderC_TIMER, ENABLE);
 	TIM_Cmd(EncoderD_TIMER, ENABLE);
 	encoderReset();
 }
 
+
 void encoderReset(void)
 {
 	__disable_irq();
-	CountEncoderA=0;
-	CountEncoderB=0;
-	CountEncoderC=0;
-	CountEncoderD=0;
+	counterEncoderPulse[MOTOR_A]=0;
+	counterEncoderPulse[MOTOR_B]=0;
+	counterEncoderPulse[MOTOR_C]=0;
+	counterEncoderPulse[MOTOR_D]=0;
 	//	NumEncoder = 0;   // su dung khi bo dem xung encoder bi tran 
 	TIM_SetCounter(TIM3,0);
 	// readEncoder();
@@ -143,28 +142,40 @@ void readEncoder(int8_t MOTOR)
 	{
 		case MOTOR_A:
 		{
-		CountEncoderA = (TIM_GetCounter(EncoderA_TIMER)) ; 
+			//velocity[MOTOR_A] = (float)counterEncoderPulse[MOTOR_A] /(ENCODER_PULSES*SAMPLE_TIME_ENCODER*MICRO_S);
+			counterEncoderPulse[MOTOR_A] = (TIM_GetCounter(EncoderA_TIMER)) ; 
 			break;
 		}
 		case MOTOR_B:
 		{
-		CountEncoderA =  (TIM_GetCounter(EncoderB_TIMER)) ; 
+			//velocity[MOTOR_B] = counterEncoderPulse[MOTOR_B] /( ENCODER_PULSES *SAMPLE_TIME_ENCODER*MICRO_S) ;
+			counterEncoderPulse[MOTOR_B]  =  (TIM_GetCounter(EncoderB_TIMER)) ; 
 			break;
 		}
 		case MOTOR_C:
 		{
-		CountEncoderC = (TIM_GetCounter(EncoderC_TIMER)) ; 
+			//velocity[MOTOR_C] = counterEncoderPulse[MOTOR_C] /( ENCODER_PULSES *SAMPLE_TIME_ENCODER*MICRO_S) ;			
+			counterEncoderPulse[MOTOR_C]  = (TIM_GetCounter(EncoderC_TIMER)) ; 
 			break;
 		}
 		case MOTOR_D:
-		{
-		CountEncoderD =  (TIM_GetCounter(EncoderD_TIMER)) ; 
+		{		
+			//velocity[MOTOR_D] = counterEncoderPulse[MOTOR_D] /( ENCODER_PULSES *SAMPLE_TIME_ENCODER*MICRO_S) ;	
+			counterEncoderPulse[MOTOR_D]  =  ( TIM_GetCounter(EncoderD_TIMER)) ; 
 			break;
 		}
 	}
 }
 
 
-
-
+void encoderInterrupt()
+{
+	enableEncoderInterrupt = false;
+	//counterEncoderPulse[MOTOR_A] = abs(TIM_GetCounter(EncoderA_TIMER) - previousCounterEncoderPulse[MOTOR_A]);
+	counterEncoderPulse[MOTOR_B] = abs(TIM_GetCounter(EncoderB_TIMER) - previousCounterEncoderPulse[MOTOR_B]);
+	//counterEncoderPulse[MOTOR_C] = abs(TIM_GetCounter(EncoderC_TIMER) - previousCounterEncoderPulse[MOTOR_C]);
+	//previousCounterEncoderPulse[MOTOR_A] = TIM_GetCounter(EncoderA_TIMER);
+	previousCounterEncoderPulse[MOTOR_B] = TIM_GetCounter(EncoderB_TIMER);
+	//previousCounterEncoderPulse[MOTOR_C] = TIM_GetCounter(EncoderC_TIMER);
+}
 

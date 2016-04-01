@@ -1,8 +1,11 @@
 .\project\stm32f4xx_it.o: ..\stm32f4xx_it.c
 .\project\stm32f4xx_it.o: ..\stm32f4xx_it.h
+.\project\stm32f4xx_it.o: ..\include.h
+.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\project\stm32f4xx_it.o: ..\stm32f4xx.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cm4.h
-.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmInstr.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmFunc.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmSimd.h
@@ -35,9 +38,6 @@
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-.\project\stm32f4xx_it.o: ..\include.h
-.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\project\stm32f4xx_it.o: ..\define.h
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: ..\Include\MotorControl.h

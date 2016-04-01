@@ -34,7 +34,7 @@
 #endif 
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx.h"
+#include "include.h"    
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
@@ -52,6 +52,7 @@ void PendSV_Handler(void);
 void SysTick_Handler(void);
 void EXTI0_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
+void TIM3_IRQHandler(void);
 
 #ifdef __cplusplus
 }

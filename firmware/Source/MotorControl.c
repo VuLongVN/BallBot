@@ -10,6 +10,7 @@ TIM_TimeBaseInitTypeDef    	PWM_TimeBaseStructure;
 TIM_OCInitTypeDef          	PWM_OCInitStructure;
 GPIO_InitTypeDef           	PWM_GPIOInitStructure;
 GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
+
 MOTOR_PARAMETERS			MOTORA_Parameters;
 MOTOR_PARAMETERS			MOTORB_Parameters;
 MOTOR_PARAMETERS			MOTORC_Parameters;

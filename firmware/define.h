@@ -16,12 +16,15 @@
 #define g							(9.81f)
 #define TESTMOTOR
 #define TESTBUTTON
+#define TESTENCODER
 
 #define SAMPLE_TIME_IMU 			(5000)  	// us
-#define SAMPLE_TIME_ENCODER			(20000)		// us
+#define SAMPLE_TIME_ENCODER		(200)		// us
 #define SAMPLE_TIME_PID				(1000)		// us
 #define PERIOD_TIME_PID				(200000)	// us	
-#define PERIOD_TIME_LQR				(200000)	// us
+#define PERIOD_TIME_LQG				(200000)	// us
+
+#define MICRO_S								(0.000001f) 
 
  
 

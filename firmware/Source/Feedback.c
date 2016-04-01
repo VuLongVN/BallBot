@@ -15,8 +15,8 @@ float phi[3];
 int16_t	velocity[3];
 int32_t coordinate[3];
 
-extern uint32_t periodEncoderPulse[3];
-extern uint32_t counterEncoderPulse[3];
+extern volatile uint64_t periodEncoderPulse[4];
+extern volatile uint64_t counterEncoderPulse[4];
 
 void feedbackProcess(void);
 void feedbackIMUProcess(void);

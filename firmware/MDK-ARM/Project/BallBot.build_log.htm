@@ -27,59 +27,61 @@ Project File Date:  03/31/2016
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 (build 20)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BallBot'
-compiling main.c...
 compiling stm32f4xx_it.c...
+compiling main.c...
 compiling MotorControl.c...
-..\Source\MotorControl.c(30): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(31): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 OTOR_A_DIR_BASE, 
 OTOR_A_DIR_PIN, moterDir);
-..\Source\MotorControl.c(32): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(33): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 EDA_BASE, 
 EDA_PIN, moterDir);
-..\Source\MotorControl.c(40): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(41): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 OTOR_B_DIR_BASE, 
 OTOR_B_DIR_PIN, moterDir);
-..\Source\MotorControl.c(42): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(43): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 EDB_BASE, 
 EDB_PIN, moterDir);
-..\Source\MotorControl.c(50): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(51): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 OTOR_C_DIR_BASE, 
 OTOR_C_DIR_PIN, moterDir);
-..\Source\MotorControl.c(52): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(53): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 EDC_BASE, 
 EDC_PIN, moterDir);
-..\Source\MotorControl.c(60): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(61): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 OTOR_D_DIR_BASE, 
 OTOR_D_DIR_PIN, moterDir);
-..\Source\MotorControl.c(62): warning:  #188-D: enumerated type mixed with another type
+..\Source\MotorControl.c(63): warning:  #188-D: enumerated type mixed with another type
   		GPIO_WriteBit(
 EDD_BASE, 
 EDD_PIN, moterDir);
-..\Source\MotorControl.c(177): warning:  #223-D: function "lroundf" declared implicitly
+..\Source\MotorControl.c(178): warning:  #223-D: function "lroundf" declared implicitly
   	temp.Speed = lroundf(fabs(localControlSignal)/MAX_CONTROL_SIGNAL);
 ..\Source\MotorControl.c: 9 warnings, 0 errors
+compiling Button.c...
 compiling IMU.c...
 compiling Controller.c...
-compiling Button.c...
 compiling PID.c...
 ..\Source\PID.c(59): warning:  #550-D: parameter "localPIDParameters" was set but never used
   void PIDsetKParameters(PID_PARAMETERS localPIDParameters, float localKp, float localKi, float localKd)
 ..\Source\PID.c: 1 warning, 0 errors
 compiling Encoder.c...
-..\Source\Encoder.c(30): warning:  #177-D: variable "Encoder_NVIC_InitStructure" was declared but never referenced
+..\Source\Encoder.c(28): warning:  #177-D: variable "Encoder_NVIC_InitStructure" was declared but never referenced
   	NVIC_InitTypeDef 						Encoder_NVIC_InitStructure;
-..\Source\Encoder.c: 1 warning, 0 errors
+..\Source\Encoder.c(175): warning:  #223-D: function "abs" declared implicitly
+  	counterEncoderPulse[MOTOR_B] = abs(TIM_GetCounter(EncoderB_TIMER) - previousCounterEncoderPulse[MOTOR_B]);
+..\Source\Encoder.c: 2 warnings, 0 errors
 compiling Feedback.c...
 linking...
-Program Size: Code=2860 RO-data=424 RW-data=96 ZI-data=1664  
-".\Project\BallBot.axf" - 0 Error(s), 11 Warning(s).
+Program Size: Code=3244 RO-data=424 RW-data=152 ZI-data=1728  
+".\Project\BallBot.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   D:\Drive\Workspace\SourceTree\BallBot\firmware\MDK-ARM\RTE

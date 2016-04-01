@@ -3,13 +3,21 @@
 void GPIOConfig(void);
 volatile uint8_t PWM_motorADutyCycle = 30;
 volatile uint8_t PWM_motorBDutyCycle = 30;
+volatile uint8_t PWM_motorCDutyCycle = 30;
+volatile uint8_t PWM_motorDDutyCycle = 30;
+
+volatile bool enableIMUInterrupt=false;
+volatile bool enableEncoderInterrupt=false;
+volatile bool enablePIDInterrupt=false;
+volatile bool enableLargerPIDInterrupt=false;
+volatile bool enableLQGInterrupt=false;
 
 int main(void)
 {
 	SysTick_Config(SystemCoreClock/168);
 	GPIOConfig();
 	PWMConfig();
-  motorDirConfig();
+  	motorDirConfig();
 
 	#ifdef TEST
 	// GPIO_WriteBit(MOTOR_A_DIR_BASE, MOTOR_A_DIR_PIN, Bit_SET);
@@ -24,7 +32,7 @@ int main(void)
 	//GPIO_WriteBit(MOTOR_B_SPEED_BASE, MOTOR_B_SPEED_PIN, Bit_SET);
 	//GPIO_WriteBit(MOTOR_B_DIR_BASE, MOTOR_B_DIR_PIN, Bit_SET);
 	#endif
-  while (1)
+  	while (1)
 		{
 			#ifdef TESTMOTOR
 				PWMControl(MOTOR_A, CLOCKWISE, PWM_motorADutyCycle);
@@ -33,7 +41,13 @@ int main(void)
 //			PWMControl(MOTOR_D, CLOCKWISE, 50);
 				
 			#endif
-			
+			#ifdef TESTENCODER
+				if (enableEncoderInterrupt)
+				{
+					encoderInterrupt();
+				}
+
+			#endif
 			
 		}
 }

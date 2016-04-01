@@ -91,8 +91,12 @@
 #define EncoderD_TIMER              TIM12
 #define EncoderD_TIMER_CLK          RCC_APB1Periph_TIM12
 
-extern uint32_t periodEncoderPulse[3];
-extern uint32_t counterEncoderPulse[3];
+extern volatile uint64_t periodEncoderPulse[4];
+extern volatile uint64_t counterEncoderPulse[4];
+extern volatile uint64_t previousCounterEncoderPulse[4];
+
+extern volatile bool enableEncoderInterrupt;
+extern int64_t NumEncoder;
 
 extern void encoderInit(void);
 extern void encoderInterrupt(void);

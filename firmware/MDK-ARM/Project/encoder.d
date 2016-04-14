@@ -1,8 +1,10 @@
 .\project\encoder.o: ..\Source\Encoder.c
 .\project\encoder.o: ..\..\firmware\include.h
 .\project\encoder.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\project\encoder.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\encoder.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\project\encoder.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\encoder.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\project\encoder.o: ..\..\firmware\stm32f4xx.h
 .\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cm4.h
 .\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmInstr.h
@@ -37,6 +39,10 @@
 .\project\encoder.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\project\encoder.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\project\encoder.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_usart.h
+.\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\attributes.h
+.\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\defines.h
+.\project\encoder.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_gpio.h
 .\project\encoder.o: ..\..\firmware\define.h
 .\project\encoder.o: ..\..\firmware\include.h
 .\project\encoder.o: ..\Include\MotorControl.h
@@ -46,3 +52,7 @@
 .\project\encoder.o: ..\Include\PID.h
 .\project\encoder.o: ..\Include\Controller.h
 .\project\encoder.o: ..\Include\Feedback.h
+.\project\encoder.o: ..\Include\UART.h
+.\project\encoder.o: ..\Include\MPU6050.h
+.\project\encoder.o: ..\Include\MPU6050_I2C.h
+.\project\encoder.o: ..\Include\MPU6050.h

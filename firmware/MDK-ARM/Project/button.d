@@ -1,8 +1,10 @@
 .\project\button.o: ..\Source\Button.c
 .\project\button.o: ..\..\firmware\include.h
 .\project\button.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\project\button.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\button.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\project\button.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\button.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\project\button.o: ..\..\firmware\stm32f4xx.h
 .\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cm4.h
 .\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmInstr.h
@@ -37,6 +39,10 @@
 .\project\button.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\project\button.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\project\button.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_usart.h
+.\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\attributes.h
+.\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\defines.h
+.\project\button.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_gpio.h
 .\project\button.o: ..\..\firmware\define.h
 .\project\button.o: ..\..\firmware\include.h
 .\project\button.o: ..\Include\MotorControl.h
@@ -46,3 +52,7 @@
 .\project\button.o: ..\Include\PID.h
 .\project\button.o: ..\Include\Controller.h
 .\project\button.o: ..\Include\Feedback.h
+.\project\button.o: ..\Include\UART.h
+.\project\button.o: ..\Include\MPU6050.h
+.\project\button.o: ..\Include\MPU6050_I2C.h
+.\project\button.o: ..\Include\MPU6050.h

@@ -6,14 +6,17 @@
  
 #include "include.h"	
 
-float varphi[3];
-float arc[3];
-float omega[3];
+double varphi[3];
+double arc[3];
+double omega[3];
 
-float phi[3];
+double phi[3];
 
 int16_t	velocity[3];
 int32_t coordinate[3];
+
+double globalTheta[3];
+double globalThetaDot[3];
 
 extern volatile uint64_t periodEncoderPulse[4];
 extern volatile uint64_t counterEncoderPulse[4];
@@ -21,11 +24,11 @@ extern volatile uint64_t counterEncoderPulse[4];
 void feedbackProcess(void);
 void feedbackIMUProcess(void);
 
-void arcOfMotor2PhiOfBall(	float localArcA, float localArcB, float localArcC, \
-							float localPhiX, float localPhiY, float localPhiZ);
+void arcOfMotor2PhiOfBall(double localArcA, double localArcB, double localArcC, \
+							double localPhiX, double localPhiY, double localPhiZ);
 
-void IMUacce2Theta(uint16_t globalAccelerometer[3], float globalTheta[3]);
-void IMUgyro2ThetaDot(uint16_t globalGyroscope[3], float globalThetaDot[3]);
+void IMUacce2Theta(void);
+void IMUgyro2ThetaDot(void);
 
 void calVarphi(int8_t localMOTOR);								
 void calArc(int8_t localMOTOR);									
@@ -56,11 +59,27 @@ void feedbackEncoderProcess(void)
 
 void feedbackIMUProcess(void)
 {
-
+	IMUGetValue();
+	IMUacce2Theta();
+	IMUgyro2ThetaDot();
 }
 
-void arcOfMotor2PhiOfBall(	float localArcA, float localArcB, float localArcC, \
-							float localPhiX, float localPhiY, float localPhiZ)
+void IMUacce2Theta(void)
+{
+	globalTheta[AXIS_X] = IMUGetXAngle();
+	globalTheta[AXIS_Y] = IMUGetYAngle();
+	globalTheta[AXIS_Z] = IMUGetZAngle();
+}
+
+void IMUgyro2ThetaDot(void)
+{
+	globalThetaDot[AXIS_X] = IMUGyroXRate();
+	globalThetaDot[AXIS_Y] = IMUGyroYRate();
+	globalThetaDot[AXIS_Z] = IMUGyroZRate();
+}
+
+void arcOfMotor2PhiOfBall(	double localArcA, double localArcB, double localArcC, \
+							double localPhiX, double localPhiY, double localPhiZ)
 {
 
 }

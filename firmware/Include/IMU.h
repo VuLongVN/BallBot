@@ -6,31 +6,20 @@
 #ifndef __IMU_H
 #define __IMU_H
 
-#include "include.h"
+#define GYRO_SENSITIVITY 			(65.5f)
+#define ACCEL_SENSITIVITY 			(16384)
 
-			/* Cua tui no viet
-			void IMUConfigure(void);
-					//imuRuntimeConfig_t *initialImuRuntimeConfig,
-				 // pidProfile_t *initialPidProfile,
-				 // accDeadband_t *initialAccDeadband,
-				 // float accz_lpf_cutoff,
-				//  uint16_t throttle_correction_angle
-			//);
-
-
-			void imuUpdate(void); //rollAndPitchTrims_t *accelerometerTrims);
-			void calculateEstimatedAltitude(uint32_t currentTime);
-			float calculateThrottleAngleScale(uint16_t throttle_correction_angle);
-			int16_t calculateThrottleAngleCorrection(uint8_t throttle_correction_value);
-			float calculateAccZLowPassFilterRCTimeConstant(float accz_lpf_cutoff);
-			int16_t imuCalculateHeading(void);//t_fp_vector *vec);
-			void imuResetAccelerationSum(void);
-			*/
-
-/* Cua tao viet */
 extern void IMUconfig(void);
-extern void IMUreadAccelerometer(uint16_t localAccelerometer[3]);
-extern void IMUreadGyroscope(uint16_t localGyroscope[3]);
+extern void IMUGetValue(void);
+extern void IMUGetValueGyroOffset(void);
+
+extern double IMUGyroXRate(void);
+extern double IMUGyroYRate(void);
+extern double IMUGyroZRate(void);
+extern double IMUGetXAngle(void);
+extern double IMUGetYAngle(void);
+extern double IMUGetZAngle(void);
+
 extern void IMUreset(void);
 
 #endif /* __IMU_H*/

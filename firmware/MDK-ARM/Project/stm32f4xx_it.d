@@ -2,8 +2,10 @@
 .\project\stm32f4xx_it.o: ..\stm32f4xx_it.h
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\project\stm32f4xx_it.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\project\stm32f4xx_it.o: ..\stm32f4xx.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cm4.h
 .\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\core_cmInstr.h
@@ -38,6 +40,10 @@
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\project\stm32f4xx_it.o: ..\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_usart.h
+.\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\attributes.h
+.\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\defines.h
+.\project\stm32f4xx_it.o: ..\CMSIS\Device\ST\STM32F4xx\Include\tm_stm32f4_gpio.h
 .\project\stm32f4xx_it.o: ..\define.h
 .\project\stm32f4xx_it.o: ..\include.h
 .\project\stm32f4xx_it.o: ..\Include\MotorControl.h
@@ -47,3 +53,7 @@
 .\project\stm32f4xx_it.o: ..\Include\PID.h
 .\project\stm32f4xx_it.o: ..\Include\Controller.h
 .\project\stm32f4xx_it.o: ..\Include\Feedback.h
+.\project\stm32f4xx_it.o: ..\Include\UART.h
+.\project\stm32f4xx_it.o: ..\Include\MPU6050.h
+.\project\stm32f4xx_it.o: ..\Include\MPU6050_I2C.h
+.\project\stm32f4xx_it.o: ..\Include\MPU6050.h

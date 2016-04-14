@@ -7,7 +7,6 @@ static uint64_t PIDTick=0;
 static uint64_t largerPIDTick=0;
 static uint64_t LQGTick=0;
 
-volatile int count;
 
 extern volatile bool enableIMUInterrupt;
 extern volatile bool enableEncoderInterrupt;
@@ -98,7 +97,6 @@ void EXTI0_IRQHandler(void)
     if(GPIO_ReadInputDataBit(GPIOA , GPIO_Pin_0))
     {
       #ifdef TESTBUTTON
-        count++;
         /* Do your stuff when PA0 is changed */
         GPIO_ToggleBits(LEDD_BASE, LEDD_PIN);
         PWM_motorADutyCycle +=5;
@@ -124,3 +122,4 @@ void TIM3_IRQHandler(void)
    TIM_ClearITPendingBit(TIM3, TIM_IT_Update); 
   }
 }
+

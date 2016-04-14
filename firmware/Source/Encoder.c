@@ -18,15 +18,15 @@ int64_t NumEncoder = 0;
 void encoderInit(void);
 void encoderInterrupt(void); // cofigured in  stm32f4xx_it.c 
 void encoderReset(void);
-void readEncoder(int8_t MOTOR);
+void encoderReadValues(int8_t MOTOR);
 
 
 void encoderInit()
 {	
 	TIM_TimeBaseInitTypeDef    	Encoder_TimeBaseStructure;
 	GPIO_InitTypeDef           	Encoder_GPIOInitStructure;
-	NVIC_InitTypeDef 						Encoder_NVIC_InitStructure;
-	TIM_ICInitTypeDef						Encoder_TIM_ICInitStructure;
+//	NVIC_InitTypeDef 			Encoder_NVIC_InitStructure;
+	TIM_ICInitTypeDef			Encoder_TIM_ICInitStructure;
 
 	RCC_APB1PeriphClockCmd(EncoderA_TIMER_CLK, ENABLE);
 	RCC_APB1PeriphClockCmd(EncoderB_TIMER_CLK, ENABLE);
@@ -96,11 +96,11 @@ void encoderInit()
 	TIM_TimeBaseInit(EncoderD_TIMER, &Encoder_TimeBaseStructure);
 
 
-	Encoder_TIM_ICInitStructure.TIM_Channel=TIM_Channel_1|TIM_Channel_2;
-	Encoder_TIM_ICInitStructure.TIM_ICPolarity=TIM_ICPolarity_Falling;
-	Encoder_TIM_ICInitStructure.TIM_ICFilter= 0xF;
-	Encoder_TIM_ICInitStructure.TIM_ICSelection=TIM_ICSelection_DirectTI;
-	TIM_ICInit(TIM3, &Encoder_TIM_ICInitStructure);
+	Encoder_TIM_ICInitStructure.TIM_Channel = TIM_Channel_1|TIM_Channel_2;
+	Encoder_TIM_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Falling;
+	Encoder_TIM_ICInitStructure.TIM_ICFilter = 0xF;
+	Encoder_TIM_ICInitStructure.TIM_ICSelection = TIM_ICSelection_DirectTI;
+	TIM_ICInit(EncoderB_TIMER, &Encoder_TIM_ICInitStructure);
 
 	/*
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
@@ -131,12 +131,15 @@ void encoderReset(void)
 	counterEncoderPulse[MOTOR_C]=0;
 	counterEncoderPulse[MOTOR_D]=0;
 	//	NumEncoder = 0;   // su dung khi bo dem xung encoder bi tran 
-	TIM_SetCounter(TIM3,0);
+	TIM_SetCounter(EncoderA_TIMER,0);
+	TIM_SetCounter(EncoderB_TIMER,0);
+	TIM_SetCounter(EncoderC_TIMER,0);
+	TIM_SetCounter(EncoderD_TIMER,0);
 	// readEncoder();
 	__enable_irq();
 }
 
-void readEncoder(int8_t MOTOR)
+void encoderReadValues(int8_t MOTOR)
 {
 	switch (MOTOR)
 	{
@@ -172,7 +175,7 @@ void encoderInterrupt()
 {
 	enableEncoderInterrupt = false;
 	//counterEncoderPulse[MOTOR_A] = abs(TIM_GetCounter(EncoderA_TIMER) - previousCounterEncoderPulse[MOTOR_A]);
-	counterEncoderPulse[MOTOR_B] = abs(TIM_GetCounter(EncoderB_TIMER) - previousCounterEncoderPulse[MOTOR_B]);
+	counterEncoderPulse[MOTOR_B] = TIM_GetCounter(EncoderB_TIMER) - previousCounterEncoderPulse[MOTOR_B];
 	//counterEncoderPulse[MOTOR_C] = abs(TIM_GetCounter(EncoderC_TIMER) - previousCounterEncoderPulse[MOTOR_C]);
 	//previousCounterEncoderPulse[MOTOR_A] = TIM_GetCounter(EncoderA_TIMER);
 	previousCounterEncoderPulse[MOTOR_B] = TIM_GetCounter(EncoderB_TIMER);

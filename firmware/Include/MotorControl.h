@@ -9,14 +9,7 @@
 
 #include "include.h"
 
-extern TIM_TimeBaseInitTypeDef    	PWM_TimeBaseStructure;
-extern TIM_OCInitTypeDef          	PWM_OCInitStructure;
-extern GPIO_InitTypeDef           	PWM_GPIOInitStructure;
-extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
-extern MOTOR_PARAMETERS			MOTORA_Parameters;
-extern MOTOR_PARAMETERS			MOTORB_Parameters;
-extern MOTOR_PARAMETERS			MOTORC_Parameters;
-extern MOTOR_PARAMETERS			MOTORD_Parameters;
+#define MAX_CONTROL_SIGNAL			(100.0f)	// rad/s	
 
 #define MOTOR_A_DIR_PIN			(GPIO_Pin_4)			// Pin PA4
 #define MOTOR_B_DIR_PIN			(GPIO_Pin_1)			// Pin PA1
@@ -70,9 +63,10 @@ extern TIM_TimeBaseInitTypeDef    	PWM_TimeBaseStructure;
 extern TIM_OCInitTypeDef          	PWM_OCInitStructure;
 extern GPIO_InitTypeDef           	PWM_GPIOInitStructure;
 extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
-extern MOTOR_PARAMETERS				MOTORA_Parameters;
-extern MOTOR_PARAMETERS				MOTORB_Parameters;
-extern MOTOR_PARAMETERS				MOTORC_Parameters;
+extern MOTOR_PARAMETERS			MOTORA_Parameters;
+extern MOTOR_PARAMETERS			MOTORB_Parameters;
+extern MOTOR_PARAMETERS			MOTORC_Parameters;
+extern MOTOR_PARAMETERS			MOTORD_Parameters;
 
 extern void PWMConfig(void);
 /**

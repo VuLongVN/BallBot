@@ -5,52 +5,61 @@
  */
 
 
-#ifndef __DEFINE_H_
-#define __DEFINE_H_
+#ifndef __DEFINE_H
+#define __DEFINE_H
 
 #include "include.h"
 
 #define ON							(1)
 #define OFF							(0)
-#define PI 							(3.141593f)
-#define g							(9.81f)
+
+
+/* Test definitions */
 #define TESTMOTOR
 #define TESTBUTTON
 #define TESTENCODER
+#define TESTUART
+#define TESTIMU
 
+#define USED_PID
+// #define USED_LQR
+
+/* Module used definitions */
+#define USE_USART1
+
+/* Time definitions */
 #define SAMPLE_TIME_IMU 			(5000)  	// us
-#define SAMPLE_TIME_ENCODER		(200)		// us
+#define SAMPLE_TIME_ENCODER			(200)		// us
 #define SAMPLE_TIME_PID				(1000)		// us
 #define PERIOD_TIME_PID				(200000)	// us	
 #define PERIOD_TIME_LQG				(200000)	// us
-
-#define MICRO_S								(0.000001f) 
-
- 
 
 // TIM_Period = (Timer_tick_frequence/PWM_frequence )-1 =
 // = (1000000/1000)-1 = 999
 #define TIM_PERIOD 					(999)
 
-#define MAX_CONTROL_SIGNAL			(100.0f)	// rad/s
+#define MICRO_S						(0.000001f) 
 
+/* Math definitions */
+#define RAD_TO_DEGREE 				(57.2957795f)
+#define PI 							(3.141593f)
+#define g							(9.81f)
 
-#define ENCODER_PULSES 				(20)
-#define OMEGA_J						(2*PI/ENCODER_PULSES)
-
+ 
+/* Type definitions */
 typedef enum
 {
 	MOTOR_A = 0,
-	MOTOR_B,
-	MOTOR_C,
-	MOTOR_D
+	MOTOR_B = 1,
+	MOTOR_C = 2,
+	MOTOR_D = 3
 } MOTOR;
 
 typedef enum
 {
 	AXIS_X = 0,
-	AXIS_Y,
-	AXIS_Z,
+	AXIS_Y = 1,
+	AXIS_Z = 2
 } AXIS;
 
 typedef struct

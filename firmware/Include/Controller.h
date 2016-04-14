@@ -10,10 +10,8 @@
 
 #include "include.h"
  
-
-
 #define RADIUS_BALL 		(BALLSIZE_1)					// mm
-#define BALLSIZE_1 			(120)										// mm
+#define BALLSIZE_1 			(120)									// mm
 #define BALLSIZE_2 			()										// mm
 #define BALLSIZE_3 			()										// mm
 #define BALLSIZE_4 			()										// mm
@@ -33,9 +31,9 @@
 #define INERTIA_ROBOT						()						// kg.m^2
 #define INERTIA_ROBOT_XY				()						// kg.m^2
 
+extern double globalTheta[3];
+extern double globalthetaDot[3];
 
-extern float globalTheta[3];
-extern float globalthetaDot[3];
 
 
 #endif

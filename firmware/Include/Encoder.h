@@ -3,10 +3,15 @@
  * @brief	Encoder
  * @authors VuLong DuyKhanh
  */
+#ifndef __ENCODER_H
+#define __ENCODER_H
 
 #include "include.h"
 
-/******* TIM2 -- PA15_CH1 -- PB3_CH2 *********************************/
+#define ENCODER_PULSES 				(100)
+#define OMEGA_J						(2*PI/ENCODER_PULSES)
+
+ /******* TIM2 -- PA15_CH1 -- PB3_CH2 *********************************/
 #define EncoderA_CH1_PIN               GPIO_Pin_15  
 #define EncoderA_CH1_GPIO_PORT         GPIOA
 #define EncoderA_CH1_GPIO_CLK          RCC_AHB1Periph_GPIOA
@@ -88,39 +93,16 @@
 #define EncoderC_TIMER_CLK          RCC_APB1Periph_TIM4
 #define EncoderD_TIMER              TIM12
 #define EncoderD_TIMER_CLK          RCC_APB1Periph_TIM12
+extern volatile uint64_t periodEncoderPulse[4];
+extern volatile uint64_t counterEncoderPulse[4];
+extern volatile uint64_t previousCounterEncoderPulse[4];
 
-
-
-
-
-#define ENCODER_PULSES 									(20)
-#define OMEGA_J													(2*PI/ ENCODER_PULSES)
-
-#define calVarphi(MOTOR)								(varphi[MOTOR] 			= (OMEGA_J*counterEncoderPulse[MOTOR]);)
-#define calArc(MOTOR)										(arc[MOTOR] 				= (RADIUS_WHEELS*varphi[MOTOR]);)
-#define calOmega(MOTOR)									(omega[MOTOR]				= (OMEGA_J/periodEncoderPulse[MOTOR]);)
-
-#define calVelocity(AXIS)								(velocity[AXIS]			= (RADIUS_BALL*phi[AXIS]);)
-#define calCoordinate(AXIS)							(coordinate[AXIS]		+= (SAMPLE_TIME_ENCODER*velocity[AXIS]);)
-
-
-
-extern float varphi[3];
-extern float arc[3];
-extern float omega[3];
-
-extern float phi[3];
-
-extern float velocity[3];
-extern int32_t coordinate[3];
-
-uint32_t periodEncoderPulse(int MOTOR);
-
+extern volatile bool enableEncoderInterrupt;
+extern int64_t NumEncoder;
 
 extern void encoderInit(void);
-extern void encoder2PhiOfBall(float localArc[3], float localPhi[3]);
 extern void encoderInterrupt(void);
 extern void encoderReset(void);
-extern void readEncoder(int MOTOR);
+extern void encoderReadValues(int8_t MOTOR);
 
-
+#endif /* __ENCODER_H */

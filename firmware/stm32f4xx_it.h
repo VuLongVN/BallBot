@@ -34,24 +34,42 @@
 #endif 
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx.h"
+#include "include.h"    
 
 /* Exported types ------------------------------------------------------------*/
+		extern volatile bool enableIMUInterrupt;
+		extern volatile bool enableEncoderInterrupt;
+		extern volatile bool enablePIDInterrupt;
+		extern volatile bool enableLargerPIDInterrupt;
+		extern volatile bool enableLQGInterrupt;
+	 
+		extern volatile uint8_t PWM_motorADutyCycle;
+		extern volatile uint8_t PWM_motorBDutyCycle;
+		extern volatile uint8_t PWM_motorCDutyCycle;
+		extern volatile uint8_t PWM_motorDDutyCycle;
+
+		extern int64_t NumEncoder;
 /* Exported constants --------------------------------------------------------*/
+		static uint64_t IMUTick=0;
+		static uint64_t encoderTick=0;
+		static uint64_t PIDTick=0;
+		static uint64_t largerPIDTick=0;
+		static uint64_t LQGTick=0;
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+		void NMI_Handler(void);
+		void HardFault_Handler(void);
+		void MemManage_Handler(void);
+		void BusFault_Handler(void);
+		void UsageFault_Handler(void);
+		void SVC_Handler(void);
+		void DebugMon_Handler(void);
+		void PendSV_Handler(void);
+		void SysTick_Handler(void);
+		void EXTI0_IRQHandler(void);
+		void EXTI15_10_IRQHandler(void);
+		void TIM3_IRQHandler(void);
 
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void MemManage_Handler(void);
-void BusFault_Handler(void);
-void UsageFault_Handler(void);
-void SVC_Handler(void);
-void DebugMon_Handler(void);
-void PendSV_Handler(void);
-void SysTick_Handler(void);
-void EXTI0_IRQHandler(void);
-void EXTI15_10_IRQHandler(void);
 
 #ifdef __cplusplus
 }

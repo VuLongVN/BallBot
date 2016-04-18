@@ -10,10 +10,10 @@
 
 #include "include.h"
 
-#define PA0_EXTI_LINE 									(EXTI_Line0)
-#define PA0_EXTI_PIN										(GPIO_Pin_0)
-#define PA0_EXTI_BASE										(GPIOB)
 
+#define PA0_EXTI_LINE 				(EXTI_Line0)
+#define PA0_EXTI_PIN				(GPIO_Pin_0)
+#define PA0_EXTI_BASE				(GPIOB)
 
 extern EXTI_InitTypeDef IT_buttonInitStructure;
 extern GPIO_InitTypeDef GPIO_buttonInitStructure;

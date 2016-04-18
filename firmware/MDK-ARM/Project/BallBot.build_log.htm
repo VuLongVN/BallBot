@@ -3,72 +3,60 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.16a
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Vu Long, HCMUT, LIC=ZB445-G31XM-5T73W-QGY93-EWBZ7-H72RI
+IDE-Version: µVision V5.18.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: kh DKhanh, kd, LIC=WHYII-TMZS4-013P1-CJ63J-JBCKU-PXE43
  
 Tool Versions:
-Toolchain:       MDK-ARM Standard  Version: 5.16a
-Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 (build 20)
-Assembler:       Armasm.exe V5.06 (build 20)
-Linker/Locator:  ArmLink.exe V5.06 (build 20)
-Library Manager: ArmAr.exe V5.06 (build 20)
-Hex Converter:   FromElf.exe V5.06 (build 20)
-CPU DLL:         SARMCM3.DLL V5.16a
-Dialog DLL:      DCM.DLL V1.13.2.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.17.0
-Dialog DLL:      TCM.DLL V1.14.5.0
+Toolchain:       MDK-ARM Standard  Version: 5.18
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.18
+Dialog DLL:      DCM.DLL V1.13.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
+Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
-D:\Drive\Workspace\SourceTree\BallBot\firmware\MDK-ARM\EXIT.uvprojx
-Project File Date:  03/25/2016
+E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\EXIT.uvprojx
+Project File Date:  04/15/2016
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 (build 20)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'BallBot'
-compiling Encoder.c...
-compiling MotorControl.c...
-..\Source\MotorControl.c(25): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-OTOR_A_DIR_BASE, 
-OTOR_A_DIR_PIN, moterDir);
-..\Source\MotorControl.c(27): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-EDA_BASE, 
-EDA_PIN, moterDir);
-..\Source\MotorControl.c(35): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-OTOR_B_DIR_BASE, 
-OTOR_B_DIR_PIN, moterDir);
-..\Source\MotorControl.c(37): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-EDB_BASE, 
-EDB_PIN, moterDir);
-..\Source\MotorControl.c(45): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-OTOR_C_DIR_BASE, 
-OTOR_C_DIR_PIN, moterDir);
-..\Source\MotorControl.c(47): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-EDC_BASE, 
-EDC_PIN, moterDir);
-..\Source\MotorControl.c(55): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-OTOR_D_DIR_BASE, 
-OTOR_D_DIR_PIN, moterDir);
-..\Source\MotorControl.c(57): warning:  #188-D: enumerated type mixed with another type
-  		GPIO_WriteBit(
-EDD_BASE, 
-EDD_PIN, moterDir);
-..\Source\MotorControl.c: 8 warnings, 0 errors
+compiling IMU.c...
+..\Source\IMU.c(64): warning:  #167-D: argument of type "volatile int16_t *" is incompatible with parameter of type "int16_t *"
+  		MPUgetAcceleration(accel_value);
+..\Source\IMU.c(65): warning:  #167-D: argument of type "volatile int16_t *" is incompatible with parameter of type "int16_t *"
+  		MPUgetRotation(gyro_value);
+..\Source\IMU.c(94): warning:  #167-D: argument of type "volatile int16_t *" is incompatible with parameter of type "int16_t *"
+  			MPUgetRotation(gyro_zero); 
+..\Source\IMU.c(147): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	globalGyroAngle[AXIS_X] = (float)localGyroAngle[AXIS_X] + (float)globalThetaDot[AXIS_X]* 
+AMPLE_TIME_IMU/1000.0 ; // unit: second;
+..\Source\IMU.c(148): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	globalGyroAngle[AXIS_Y] = (float)localGyroAngle[AXIS_Y] + (float)globalThetaDot[AXIS_Y]* 
+AMPLE_TIME_IMU/1000.0 ;
+..\Source\IMU.c(149): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	globalGyroAngle[AXIS_Z] = (float)localGyroAngle[AXIS_Z] + (float)globalThetaDot[AXIS_Z]* 
+AMPLE_TIME_IMU/1000.0 ;
+..\Source\IMU.c(167): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FilteredAngle[AXIS_X] = ALPHA*(float)globalGyroAngle[AXIS_X] + (1.0-ALPHA)*(float)globalTheta[AXIS_X];
+..\Source\IMU.c(168): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FilteredAngle[AXIS_Y] = ALPHA*(float)globalGyroAngle[AXIS_Y] + (1.0-ALPHA)*(float)globalTheta[AXIS_Y];
+..\Source\IMU.c(169): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	FilteredAngle[AXIS_Z] = ALPHA*(float)globalGyroAngle[AXIS_Z] + (1.0-ALPHA)*(float)globalTheta[AXIS_Z];
+..\Source\IMU.c: 9 warnings, 0 errors
 linking...
-Program Size: Code=2832 RO-data=424 RW-data=64 ZI-data=1664  
-".\Project\BallBot.axf" - 0 Error(s), 8 Warning(s).
+Program Size: Code=12920 RO-data=576 RW-data=432 ZI-data=2176  
+".\Project\BallBot.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  D:\Drive\Workspace\SourceTree\BallBot\firmware\MDK-ARM\RTE
-  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  E:\WorkSpace\Project\BallBot_V1\firmware\MDK-ARM\RTE
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 Build Time Elapsed:  00:00:02

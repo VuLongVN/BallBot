@@ -4,15 +4,12 @@
  * @authors VuLong DuyKhanh
  */
 
-#ifndef __SPEEDCONTROL_H
-#define __SPEEDCONTROL_H
+#ifndef __MOTOR_CONTROL_H
+#define __MOTOR_CONTROL_H
 
 #include "include.h"
 
-extern TIM_TimeBaseInitTypeDef    	PWM_TimeBaseStructure;
-extern TIM_OCInitTypeDef          	PWM_OCInitStructure;
-extern GPIO_InitTypeDef           	PWM_GPIOInitStructure;
-extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
+#define MAX_CONTROL_SIGNAL			(100.0f)	// rad/s	
 
 #define MOTOR_A_DIR_PIN			(GPIO_Pin_4)			// Pin PA4
 #define MOTOR_B_DIR_PIN			(GPIO_Pin_1)			// Pin PA1
@@ -24,7 +21,7 @@ extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
 #define MOTOR_C_DIR_BASE		(GPIOB)						// Pin PB9
 #define MOTOR_D_DIR_BASE		(GPIOE)						// Pin PE4
 
-#define CLOCKWISE						(1)
+#define CLOCKWISE				(1)
 #define COUNTER_CLOCKWISE		(0)
 
 #define MOTOR_A_SPEED_PIN		(GPIO_Pin_2)			// Pin PA2
@@ -32,15 +29,15 @@ extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
 #define MOTOR_C_SPEED_PIN		(GPIO_Pin_8)			// Pin PB8
 #define MOTOR_D_SPEED_PIN		(GPIO_Pin_6)			// Pin PE6
 
-#define MOTOR_A_SPEED_BASE	(GPIOA)						// Pin PA2
-#define MOTOR_B_SPEED_BASE	(GPIOA)						// Pin PA3
-#define MOTOR_C_SPEED_BASE	(GPIOB)						// Pin PB8
-#define MOTOR_D_SPEED_BASE	(GPIOE)						// Pin PE6
+#define MOTOR_A_SPEED_BASE		(GPIOA)						// Pin PA2
+#define MOTOR_B_SPEED_BASE		(GPIOA)						// Pin PA3
+#define MOTOR_C_SPEED_BASE		(GPIOB)						// Pin PB8
+#define MOTOR_D_SPEED_BASE		(GPIOE)						// Pin PE6
 	
-#define PWM_MOTOR_A_PERIPH	(RCC_AHB1Periph_GPIOA)		// Pin PA2
-#define PWM_MOTOR_B_PERIPH	(RCC_AHB1Periph_GPIOA)		// Pin PA3
-#define PWM_MOTOR_C_PERIPH	(RCC_AHB1Periph_GPIOB)		// Pin PB8
-#define PWM_MOTOR_D_PERIPH	(RCC_AHB1Periph_GPIOE)		// Pin PE6
+#define PWM_MOTOR_A_PERIPH		(RCC_AHB1Periph_GPIOA)		// Pin PA2
+#define PWM_MOTOR_B_PERIPH		(RCC_AHB1Periph_GPIOA)		// Pin PA3
+#define PWM_MOTOR_C_PERIPH		(RCC_AHB1Periph_GPIOB)		// Pin PB8
+#define PWM_MOTOR_D_PERIPH		(RCC_AHB1Periph_GPIOE)		// Pin PE6
 
 #define MOTOR_A_AF_PIN			(GPIO_PinSource2)
 #define MOTOR_B_AF_PIN			(GPIO_PinSource3)
@@ -66,20 +63,27 @@ extern TIM_TimeBaseInitTypeDef    	PWM_TimeBaseStructure;
 extern TIM_OCInitTypeDef          	PWM_OCInitStructure;
 extern GPIO_InitTypeDef           	PWM_GPIOInitStructure;
 extern GPIO_InitTypeDef           	GPIO_MotorDirInitStructure;
+extern MOTOR_PARAMETERS			MOTORA_Parameters;
+extern MOTOR_PARAMETERS			MOTORB_Parameters;
+extern MOTOR_PARAMETERS			MOTORC_Parameters;
+extern MOTOR_PARAMETERS			MOTORD_Parameters;
 
 extern void PWMConfig(void);
 /**
-	* @function PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
+  * @function PWMControl(int motorJ  ,int  moterDir , int motorSpeed)
   * @brief  	Control Motor A, B, C or D       
   * @param 		motorJ  : PWM pin where x can be 	A ( connected to Pin PA2)
-																								B ( connected to Pin PA3)
-																								C ( connected to Pin PB8)
-																								D ( connected to Pin PE6)
-	* @param 		moterDir : Direction of Motor can be 	1 Clock-wise     ( Affected to Pin PA0 , PA1 or PB9 or PE4)
+													B ( connected to Pin PA3)
+													C ( connected to Pin PB8)
+													D ( connected to Pin PE6)
+	* @param 		moterDir : Direction of Motor can be 	1 Clock-wise     ( Affected to Pin PA4 , PA1 or PB9 or PE4)
 																										0 AntiClock-wise
-  * @param 		motorSpeed : DutyCycle of PWM Pulse (max = 1000)
+  * @param 		motorSpeed : DutyCycle of PWM Pulse (max = 100)
   * @retval 	None
   */
-extern void PWMControl(int motorJ  ,int  moterDir , int motorSpeed);
+extern void PWMControl(int motorJ, int  moterDir, int motorSpeed);
 extern void motorDirConfig(void);
-#endif /* __SPEED_CONTROL_H*/
+extern void controlSignal2MotorParameter(float localControlSignal,  int8_t localMotor);
+extern int8_t omega2PWMDutyCycles(float localOmega);
+
+#endif /* __MOTOR_CONTROL_H*/
